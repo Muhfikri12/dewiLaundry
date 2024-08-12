@@ -41,49 +41,7 @@
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div class="logo">
-                <h1 class="text-light"><a href="index.html"><span>Dewi Laundry</span></a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="active " href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header><!-- End Header -->
+    @include('landing_page.components.header')
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -136,10 +94,9 @@
     </section><!-- End Hero -->
 
     <main id="main">
-
         <section class="section-bg">
-            <div class="container mb-3">
-                <h1 class="text-center text-white">Services</h1>
+            <div class="container mb-3 section-title">
+                <h2 class="text-center text-white">Services</h2>
             </div>
             <div class="container">
                 <div class="justify-content-center row">
@@ -159,7 +116,7 @@
                     <div class="text-center card-features col-lg-2 ">
                         <img src="{{ asset('assets/img/example3.jpg') }}" alt="">
                         <div class="desc-card">
-                            <a href="">Rent Linen</a>
+                            <a href="">Rent Linen Room</a>
                         </div>
                     </div>
                     <div class="text-center card-features col-lg-2 ">
@@ -178,8 +135,9 @@
             </div>
         </section>
 
+
         <!-- ======= Why Us Section ======= -->
-        <section class="bg-white why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <section class="bg-white section-bg" data-aos="fade-up" date-aos-delay="200">
             <div class="container">
 
                 <div class="row">
@@ -190,18 +148,27 @@
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
-
-                        <div class="icon-box">
-                            <h4 class="title"><a href="">Tentang Kami</a></h4>
-                            <p class="description">PT. DEWI LAUNDRY GROUP didirikan pada tahun 2018 dengan semangat
+                        <div class="pb-0 mt-3 section-title">
+                            <h2 class="mb-0">About Us</h2>
+                        </div>
+                        <div class="mt-3 icon-box">
+                            <p><span style="font-weight: 600">PT. KIMOZA PRIMA JAYA ( Dewi Laundry )</span> didirikan
+                                pada
+                                tahun 2018 dengan semangat
                                 untuk memberikan layanan laundry terbaik bagi masyarakat Karawang. Berawal
                                 dari usaha laundry rumahan, kami terus berkembang dan berinovasi hingga
                                 menjadi laundry profesional terdepan di Karawang.
+                            </p>
+                            <p>
                                 Komitmen kami tidak hanya pada kebersihan dan ketepatan waktu, tetapi juga
                                 membangun kepercayaan dan menjalin hubungan jangka panjang dengan
                                 para pelanggan. Kami memahami kebutuhan hotel dan perusahaan di
                                 Karawang, dan kami dedikasikan layanan kami untuk memenuhi kebutuhan
-                                mereka dengan sepenuh hati.</p>
+                                mereka dengan sepenuh hati.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{ route('about') }}">Selengkapnya</a>
                         </div>
 
                     </div>
@@ -210,9 +177,71 @@
             </div>
         </section><!-- End Why Us Section -->
 
+        <section id="team" class="team section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Team</h2>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-5 justify-content-center">
+                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Yusuf Agung Nugroho</h4>
+                            <span>Owner</span>
+                            <p>Owner</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Ilham Bahtiar</h4>
+                            <span>Grand Manager</span>
+                            <p>Grand Manager</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Yubi Abdillah</h4>
+                            <span>Manager Operational</span>
+                            <p>Manager Operational</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Team Section -->
+
         <!-- Clients Section -->
         <section id="clients" class="clients section">
             <div class="container">
+                <div class="mb-3 section-title">
+                    <h2 class="text-center">Our Clients</h2>
+                </div>
                 <div class="swiper init-swiper">
                     <div class="swiper-wrapper align-items-center">
                         <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
@@ -238,97 +267,160 @@
             </div>
         </section><!-- /Clients Section -->
 
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-        <div class="footer-newsletter">
+        <!-- ======= Portfolio Section ======= -->
+        <section class="portfolio">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
+
+                <div class="mb-3 section-title">
+                    <h2 class="text-center">Galeries</h2>
                 </div>
-            </div>
-        </div>
 
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out"
+                    data-aos-duration="500">
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-app">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>App 1</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-web">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <p>Kunjungan Batiqa Hotel</p>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Lihat Detail"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-app">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>App 2</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-info">
-                        <h3>About Moderna</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                            valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                        <div class="mt-3 social-links">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-card">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>Card 2</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-web">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>Web 2</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-app">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>App 3</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-card">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>Card 1</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-card">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>Card 3</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-wrap filter-web">
+                        <div class="portfolio-item">
+                            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3>Web 1</h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="Web 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Portfolio Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
             </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
-    </footer><!-- End Footer -->
+        </section><!-- End Portfolio Section -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    </main><!-- End #main -->
+
+    @include('landing_page.components.footer')
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
@@ -377,6 +469,21 @@
             },
         });
     </script>
+
+    <script>
+        if (window.innerWidth <= 425) {
+            const swiper = new Swiper('.swiper-container', {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        }
+    </script>
+
+
 
 </body>
 
