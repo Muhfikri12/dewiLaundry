@@ -54,18 +54,21 @@
     </section><!-- End About Section -->
 
     <!-- ======= visi misi Section ======= -->
-    <section class="pt-0 skills" data-aos="fade-up">
+    <section class=" skills" data-aos="fade-up">
         <div class="container">
+            <div class="section-title">
+                <h2>Vision & Mission</h2>
+            </div>
             <div class="row">
                 <div class="order-2 col-lg-6 order-lg-1">
                     <div class="pb-0 section-title">
-                        <h2>Vision</h2>
+                        <h4>Vision</h4>
                     </div>
                     <p>Menjadi perusahaan jasa laundry profesional dengan mengedapankan
                         hasil dan kualitas terbaik.</p>
 
                     <div class="pb-0 section-title">
-                        <h2>Mission</h2>
+                        <h4>Mission</h4>
                     </div>
                     <p>Memberikan kualitas pencucian yang suci, bersih dan rapi.</p>
                     <p>Memberikan pelayanan profesional dengan berbasis pada ketepatan
@@ -81,7 +84,7 @@
         </div>
     </section><!-- End visi misi Section -->
 
-    <section class="pt-0 skills" data-aos="fade-up">
+    <section class="skills" data-aos="fade-up">
         <div class="service">
             <div class="container">
                 <div class="section-title">

@@ -2,7 +2,7 @@
     <ul>
         <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
         <li><a class="{{ request()->is('aboutUs') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
-        <li><a class="{{ request()->is('services') ? 'active' : '' }}" href="">Services</a></li>
+        <li><a class="{{ request()->is('services') ? 'active' : '' }}" href="{{ route('service') }}">Services</a></li>
         <li><a class="{{ request()->is('portfolio') ? 'active' : '' }}" href="">Portfolio</a></li>
         <li><a class="{{ request()->is('team') ? 'active' : '' }}" href="">Team</a></li>
         <li><a class="{{ request()->is('blog') ? 'active' : '' }}" href="">Blog</a></li>

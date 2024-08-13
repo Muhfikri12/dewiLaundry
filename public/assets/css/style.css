@@ -625,11 +625,19 @@ section {
     background-color: #3073a7;
 }
 
+.section-bg-service {
+    background-color: rgb(243, 248, 250);
+}
+
 .section-title {
     text-align: center;
     padding-bottom: 30px;
 }
 
+.section-title h4 {
+    font-weight: 600;
+    padding-top: 1rem;
+}
 .section-title h2 {
     font-size: 28px;
     font-weight: 600;
@@ -1344,6 +1352,12 @@ section {
     padding: 0 30px;
     margin-bottom: 60px;
     position: relative;
+}
+
+.styled-video {
+    width: 540px;
+    height: 360px;
+    border-radius: 10px;
 }
 
 .service-details .card-img {

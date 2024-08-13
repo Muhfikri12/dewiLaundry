@@ -122,13 +122,14 @@
                             </p>
                         </div>
                         <div>
-                            <a href="{{ route('about') }}">Selengkapnya</a>
+                            <div class="read-more"><a href="{{ route('about') }}"><i class="bi bi-arrow-right"></i> Read
+                                    More</a>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
         </section><!-- End Why Us Section -->
 
         <section id="team" class="team section light-background">
