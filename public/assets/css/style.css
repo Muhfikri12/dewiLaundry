@@ -148,6 +148,33 @@ h6,
     }
 }
 
+// Accordion
+
+.accordion .card-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 1px solid #007bff;
+}
+
+.accordion .btn-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.accordion .btn-link:hover {
+    text-decoration: underline;
+}
+
+.accordion .card-body {
+    background-color: #f8f9fa;
+}
+
+.accordion .card {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -1541,6 +1568,11 @@ section {
 
 .portfolio .portfolio-item img {
     transition: all 0.3s ease-in-out;
+}
+
+.portfolio-info p {
+    color: white;
+    font-weight: 600;
 }
 
 .portfolio .portfolio-item .portfolio-info {

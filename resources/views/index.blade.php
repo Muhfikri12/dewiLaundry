@@ -139,6 +139,9 @@
         <!-- ======= Why Us Section ======= -->
         <section class="bg-white section-bg" data-aos="fade-up" date-aos-delay="200">
             <div class="container">
+                <div class="section-title">
+                    <h2 class="mb-0">About Us</h2>
+                </div>
 
                 <div class="row">
                     <div class="col-lg-6 video-box">
@@ -146,11 +149,7 @@
                         <a href="https://youtu.be/SDROba_M42g?si=bguzuhObDMOEJRcY" class="mb-4 venobox play-btn"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
-
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <div class="pb-0 mt-3 section-title">
-                            <h2 class="mb-0">About Us</h2>
-                        </div>
                         <div class="mt-3 icon-box">
                             <p><span style="font-weight: 600">PT. KIMOZA PRIMA JAYA ( Dewi Laundry )</span> didirikan
                                 pada
@@ -282,10 +281,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>App 1</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -312,10 +311,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>App 2</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -327,10 +326,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>Card 2</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -342,10 +341,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>Web 2</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -357,10 +356,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>App 3</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -372,10 +371,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>Card 1</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -387,10 +386,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>Card 3</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
@@ -402,10 +401,10 @@
                         <div class="portfolio-item">
                             <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h3>Web 1</h3>
+                                <p>Kunjungan Batiqa Hotel</p>
                                 <div>
                                     <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 1"><i class="bx bx-plus"></i></a>
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                                     <a href="portfolio-details.html" title="Portfolio Details"><i
                                             class="bx bx-link"></i></a>
                                 </div>
