@@ -8,11 +8,15 @@ class LandingPageController extends Controller
 {
     public function home()
     {
-        return view('index');
+        return view('landing_page.components.main', [
+            'main' => 'home',
+        ]);
     }
 
     public function about()
     {
-        return view('landing_page.about');
+        return view('landing_page.components.main', [
+            'main' => 'about'
+        ]);
     }
 }
