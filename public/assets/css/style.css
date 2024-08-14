@@ -1343,7 +1343,7 @@ section {
 /*--------------------------------------------------------------
 # Service Details
 --------------------------------------------------------------*/
-.service-details {
+/* .service-details {
     padding-bottom: 10px;
 }
 
@@ -1354,11 +1354,6 @@ section {
     position: relative;
 }
 
-.styled-video {
-    width: 540px;
-    height: 360px;
-    border-radius: 10px;
-}
 
 .service-details .card-img {
     width: calc(100% + 60px);
@@ -1420,6 +1415,61 @@ section {
 
 .service-details .card:hover .card-body .card-title a {
     color: #68a4c4;
+} */
+
+.machine .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.machine .card-img img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.machine .card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+    backdrop-filter: blur(0px);
+}
+
+.machine:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.machine:hover .card-body {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 425px) {
+    .service-details .machine {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service-details .machine .card-body h5,
+    .service-details .machine .card-body p {
+        font-size: 80%;
+    }
 }
 
 /*--------------------------------------------------------------

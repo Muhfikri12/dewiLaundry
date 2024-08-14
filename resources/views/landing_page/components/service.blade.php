@@ -1,105 +1,81 @@
 <main id="main">
 
-    <!-- ======= Our Services Section ======= -->
-    <section class="breadcrumbs">
-        <div class="container">
 
-            <div class="d-flex justify-content-between align-items-center">
-                <h2>Our Services</h2>
-                <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Our Services</li>
-                </ol>
-            </div>
-
+    <section class="section-bg">
+        <div class="container mb-3 section-title">
+            <h2 class="text-center text-white">Our Services</h2>
         </div>
-    </section><!-- End Our Services Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section class="services">
         <div class="container">
+            <div class="justify-content-center row">
 
-            <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="icon-box icon-box-pink">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
+                <div class="text-center card-features col-lg-2 col-md-12">
+                    <img src="{{ asset('assets/img/example1.jpg') }}" alt="">
+                    <div class="desc-card">
+                        <h6>Guest Laundry</h6>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box icon-box-cyan">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur</p>
+                <div class="text-center card-features col-lg-2 ">
+                    <img src="{{ asset('assets/img/example2.jpg') }}" alt="">
+                    <div class="desc-card">
+                        <h6>Linen Room</h6>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box icon-box-green">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum</p>
+                <div class="text-center card-features col-lg-2 ">
+                    <img src="{{ asset('assets/img/example3.jpg') }}" alt="">
+                    <div class="desc-card">
+                        <h6>Rent Linen Room</h6>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box icon-box-blue">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
+                <div class="text-center card-features col-lg-2 ">
+                    <img src="{{ asset('assets/img/example4.jpg') }}" alt="">
+                    <div class="desc-card">
+                        <h6>Carpet, Bedcover & Etc</h6>
                     </div>
                 </div>
-
+                <div class="text-center card-features col-lg-2 ">
+                    <img src="{{ asset('assets/img/example5.jpg') }}" alt="">
+                    <div class="desc-card">
+                        <h6>Employee Uniform</h6>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Why Us Section ======= -->
+    </section>
     <section class="why-us section-bg-service" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
             <div class="row">
-                <video class="styled-video" muted>
-                    <source src="{{ asset('assets/video/video1.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="col-lg-6 video-box">
+                    <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
+                </div>
 
-                <div class="p-5 col-lg-6 d-flex flex-column justify-content-center">
-
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident</p>
-                    </div>
+                <div class=" col-lg-6 d-flex flex-column justify-content-center">
 
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
+                        <h4 class="title"><a href="">Why Us</a></h4>
+                        <p class="description">Dewi Laundry menawarkan lebih dari sekadar jasa mencuci dan
+                            menyetrika. Kami menyediakan solusi laundry yang komprehensif, dirancang untuk memenuhi
+                            kebutuhan unik setiap pelanggan.</p>
+                        <p class="description">Dengan layanan yang profesional dan didukung oleh peralatan modern, kami
+                            menjamin kualitas hasil laundry yang optimal.</p>
+                        <p class="description">Kami juga menawarkan fleksibilitas dalam pelayanan, mulai dari pilihan
+                            paket yang sesuai dengan kebutuhan Anda hingga layanan antar-jemput yang memudahkan. Pilih
+                            Dewi Laundry untuk kenyamanan, kepercayaan, dan hasil yang terbaik setiap kali
+                            Anda membutuhkan solusi laundry.</p>
                     </div>
-
                 </div>
             </div>
 
         </div>
     </section><!-- End Why Us Section -->
 
-    <!-- ======= Service Details Section ======= -->
+    <!-- ======= Machine Section ======= -->
     <section class="service-details">
         <div class="container">
             <div class="section-title">
                 <h2>Our Machines</h2>
             </div>
             <div class="row">
-                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="card">
                         <div class="card-img">
                             <img src="assets/img/service-details-1.jpg" alt="...">
@@ -109,12 +85,10 @@
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
                                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                                 ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                            <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="card">
                         <div class="card-img">
                             <img src="assets/img/service-details-2.jpg" alt="...">
@@ -124,13 +98,11 @@
                             <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                                 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
                                 quasi architecto beatae vitae dicta sunt explicabo</p>
-                            <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
-                            </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="card">
                         <div class="card-img">
                             <img src="assets/img/service-details-3.jpg" alt="...">
@@ -140,12 +112,10 @@
                             <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed
                                 quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est,
                                 qui dolorem ipsum quia dolor sit amet</p>
-                            <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="card">
                         <div class="card-img">
                             <img src="assets/img/service-details-4.jpg" alt="...">
@@ -155,15 +125,13 @@
                             <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam
                                 laudantium voluptatem. In molestiae earum ab sit esse voluptatem. Eos ipsam cumque ipsum
                                 officiis qui nihil aut incidunt aut</p>
-                            <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section><!-- End Service Details Section -->
+    </section><!-- End Machine Section -->
 
     <!-- ======= Pricing Section ======= -->
     <section class="pricing section-bg-service" data-aos="fade-up">
@@ -221,31 +189,5 @@
 
         </div>
     </section><!-- End Pricing Section -->
-
-    <script>
-        // Function to check if the video is in the viewport
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Get the video element
-        const video = document.getElementById('myVideo');
-
-        // Event listener for scroll
-        window.addEventListener('scroll', function() {
-            if (isInViewport(video)) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    </script>
-
 
 </main><!-- End #main -->
