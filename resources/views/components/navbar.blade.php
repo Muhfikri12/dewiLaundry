@@ -3,10 +3,7 @@
         <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
         <li><a class="{{ request()->is('aboutUs') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
         <li><a class="{{ request()->is('services') ? 'active' : '' }}" href="{{ route('service') }}">Services</a></li>
-        <li><a class="{{ request()->is('portfolio') ? 'active' : '' }}" href="">Portfolio</a></li>
-        <li><a class="{{ request()->is('team') ? 'active' : '' }}" href="">Team</a></li>
-        <li><a class="{{ request()->is('blog') ? 'active' : '' }}" href="">Blog</a></li>
-        <li class="dropdown">
+        {{-- <li class="dropdown">
             <a href="#" class="{{ request()->is('dropdown') ? 'active' : '' }}"><span>Drop Down</span> <i
                     class="bi bi-chevron-down"></i></a>
             <ul>
@@ -25,8 +22,8 @@
                 <li><a href="#">Drop Down 3</a></li>
                 <li><a href="#">Drop Down 4</a></li>
             </ul>
-        </li>
-        <li><a class="{{ request()->is('contact') ? 'active' : '' }}" href="">Contact Us</a>
+        </li> --}}
+        <li><a class="{{ request()->is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Us</a>
         </li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>

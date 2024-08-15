@@ -26,4 +26,11 @@ class LandingPageController extends Controller
             'main' => 'service'
         ]);
     }
+
+    public function contact()
+    {
+        return view('landing_page.main', [
+            'main' => 'contact'
+        ]);
+    }
 }
