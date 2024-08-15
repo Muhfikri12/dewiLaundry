@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -9,9 +10,7 @@ Route::get('/aboutUs', [LandingPageController::class, 'about'])->name('about');
 Route::get('/services', [LandingPageController::class, 'service'])->name('service');
 Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
