@@ -100,25 +100,13 @@
 
                 <div class="row">
                     <div class="col-lg-6 video-box">
-                        <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
+                        <img src="{{ $about->photo }}" class="img-fluid" alt="">
                         <a href="https://youtu.be/SDROba_M42g?si=bguzuhObDMOEJRcY" class="mb-4 venobox play-btn"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <div class="mt-3 icon-box">
-                            <p><span style="font-weight: 600">PT. KIMOZA PRIMA JAYA ( Dewi Laundry )</span> didirikan
-                                pada
-                                tahun 2018 dengan semangat
-                                untuk memberikan layanan laundry terbaik bagi masyarakat Karawang. Berawal
-                                dari usaha laundry rumahan, kami terus berkembang dan berinovasi hingga
-                                menjadi laundry profesional terdepan di Karawang.
-                            </p>
-                            <p>
-                                Komitmen kami tidak hanya pada kebersihan dan ketepatan waktu, tetapi juga
-                                membangun kepercayaan dan menjalin hubungan jangka panjang dengan
-                                para pelanggan. Kami memahami kebutuhan hotel dan perusahaan di
-                                Karawang, dan kami dedikasikan layanan kami untuk memenuhi kebutuhan
-                                mereka dengan sepenuh hati.
+                            <p>{{ $about->description }}
                             </p>
                         </div>
                         <div>

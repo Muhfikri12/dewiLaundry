@@ -81,12 +81,22 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
                         style="width: 40px; height: 40px;">
-                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                    <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="m-0 border-0 dropdown-menu dropdown-menu-end bg-light rounded-0 rounded-bottom">
                     <a href="#" class="dropdown-item">My Profile</a>
                     <a href="#" class="dropdown-item">Settings</a>
-                    <a href="#" class="dropdown-item">Log Out</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                            this.closest('form').submit();"
+                            class="dropdown-item">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                    {{-- <a href="{{ route('logout') }}" class="dropdown-item">Log Out</a> --}}
                 </div>
             </div>
         </div>

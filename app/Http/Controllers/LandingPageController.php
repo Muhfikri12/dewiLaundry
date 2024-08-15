@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -10,13 +11,15 @@ class LandingPageController extends Controller
     {
         return view('landing_page.main', [
             'main' => 'home',
+            'about' => About::first()
         ]);
     }
 
     public function about()
     {
         return view('landing_page.main', [
-            'main' => 'about'
+            'main' => 'about',
+            'about' => About::first()
         ]);
     }
 
