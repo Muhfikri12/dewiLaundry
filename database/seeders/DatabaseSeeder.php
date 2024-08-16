@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AboutSeeder::class,
             AdvantagesSeeder::class,
+            MachinesSeeder::class
         ]);
     }
 }

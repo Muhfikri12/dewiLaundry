@@ -36,6 +36,7 @@ class MachineRequest extends FormRequest
             'photo.image' => 'The uploaded file must be a valid image.',
             'photo.mimes' => 'The uploaded file must be an image of type: jpeg, png, jpg, gif, or svg.',
             'photo.max' => 'The image size must not exceed 8 MB.',
+            'description.required' => 'Description field is required'
         ];
     }
 }

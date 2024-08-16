@@ -3,7 +3,7 @@
     <!-- Content Start -->
     <div class="content">
         <!-- Navbar Start -->
-        {{-- @include('dashboard.navbar') --}}
+        @include('dashboard.navbar')
         <!-- Navbar End -->
 
 
@@ -72,7 +72,7 @@
 
 
         <!-- Footer Start -->
-        {{-- @include('dashboard.footer') --}}
+        @include('dashboard.footer')
         <!-- Footer End -->
     </div>
     <!-- Content End -->

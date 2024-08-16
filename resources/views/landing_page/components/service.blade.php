@@ -75,59 +75,19 @@
                 <h2>Our Machines</h2>
             </div>
             <div class="row">
-                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="assets/img/service-details-1.jpg" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Dryer 50Kg</a></h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="assets/img/service-details-2.jpg" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Kapsul 30Kg</a></h5>
-                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                quasi architecto beatae vitae dicta sunt explicabo</p>
+                @foreach ($machine as $item)
+                    <div class="machine col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="{{ asset($item->photo) }}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">{{ $item->name }}</a></h5>
+                                <p class="card-text">{{ $item->description }}</p>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="assets/img/service-details-3.jpg" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Spinner 30Kg</a></h5>
-                            <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed
-                                quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est,
-                                qui dolorem ipsum quia dolor sit amet</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="machine col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="assets/img/service-details-4.jpg" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Washing Front Loading 30Kg</a></h5>
-                            <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam
-                                laudantium voluptatem. In molestiae earum ab sit esse voluptatem. Eos ipsam cumque ipsum
-                                officiis qui nihil aut incidunt aut</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Advantages;
+use App\Models\Machines;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -12,7 +13,8 @@ class LandingPageController extends Controller
     {
         return view('landing_page.main', [
             'main' => 'home',
-            'about' => About::first()
+            'about' => About::first(),
+
         ]);
     }
 
@@ -27,7 +29,8 @@ class LandingPageController extends Controller
     public function service()
     {
         return view('landing_page.main', [
-            'main' => 'service'
+            'main' => 'service',
+            'machine' => Machines::all(),
         ]);
     }
 
