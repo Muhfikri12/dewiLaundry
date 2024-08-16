@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdvantagesRequest;
 use App\Models\Advantages;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdvantagesController extends Controller
 {
@@ -13,7 +15,7 @@ class AdvantagesController extends Controller
     public function index()
     {
         return view('dashboard.index', [
-            'main' => 'advantages',
+            'main' => 'advantages.index',
             'advantages' => Advantages::all()
         ]);
     }
@@ -23,15 +25,24 @@ class AdvantagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.index', [
+            'main' => 'advantages.create'
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AdvantagesRequest $request)
     {
-        //
+        Advantages::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+
+        ]);
+
+        Alert::success('Success', 'Advantage created successfully');
+        return redirect()->route('advantages.index');
     }
 
     /**

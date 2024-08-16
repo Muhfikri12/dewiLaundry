@@ -36,6 +36,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <div class="p-0 bg-white container-xxl position-relative d-flex">
         <!-- Spinner Start -->
         <div id="spinner"
