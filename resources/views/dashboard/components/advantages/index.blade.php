@@ -36,11 +36,18 @@
                                                         <i class="p-1 fas fa-ellipsis-v"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href=""><i
-                                                                class="bx bx-edit-alt me-1"></i> Ubah</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                class="bx bx-trash me-1"></i>
-                                                            Hapus</a>
+                                                        <a class="dropdown-item"
+                                                            href="{{ route('advantages.edit', $item->id) }}"><i
+                                                                class="bx bx-edit-alt me-1"></i>Ubah</a>
+                                                        <form action="{{ route('advantages.destroy', $item->id) }}"
+                                                            method="POST" id="delete-form-{{ $item->id }}">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a class="dropdown-item" href="javascript:void(0);"
+                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();">
+                                                                <i class="bx bx-trash me-1"></i> Hapus
+                                                            </a>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </td>

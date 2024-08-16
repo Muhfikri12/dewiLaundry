@@ -15,13 +15,15 @@
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
                 <h6 class="mb-4">Advantages Form</h6>
-                <form action="{{ route('advantages.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('advantages.update', $advantages->id) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" name="title" id="title"
-                            class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}"
-                            aria-describedby="title">
+                            class="form-control @error('title') is-invalid @enderror"
+                            value="{{ $advantages->title ?? old('title') }}" aria-describedby="title">
 
                         @error('title')
                             <span class="text-danger">{{ $message }}</span>
@@ -30,7 +32,7 @@
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                            cols="30" rows="10">{{ old('description') }}</textarea>
+                            cols="30" rows="10">{{ $advantages->description ?? old('description') }}</textarea>
                         @error('description')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AdvantagesRequest;
 use App\Models\Advantages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AdvantagesController extends Controller
@@ -35,14 +36,24 @@ class AdvantagesController extends Controller
      */
     public function store(AdvantagesRequest $request)
     {
-        Advantages::create([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
+        DB::beginTransaction();
+        try {
+            Advantages::create([
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
 
-        ]);
+            ]);
 
-        Alert::success('Success', 'Advantage created successfully');
-        return redirect()->route('advantages.index');
+            DB::commit();
+
+            Alert::success('Success', 'Advantage created successfully');
+            return redirect()->route('advantages.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to create advantage: ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
@@ -56,24 +67,62 @@ class AdvantagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Advantages $advantages)
+    public function edit(Request $advantages, $id)
     {
-        //
+        return view('dashboard.index', [
+            'main' => 'advantages.edit',
+            'advantages' => Advantages::findOrFail($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Advantages $advantages)
+    public function update(Request $request, Advantages $advantages, string $id)
     {
-        //
+        DB::beginTransaction();
+        try {
+            // Update the advantage with the request data
+            $advantages = Advantages::find($id);
+            $advantages->title = $request->title;
+            $advantages->description = $request->description;
+            $advantages->save();
+
+            DB::commit(); // Commit the transaction
+
+            // Display a success message
+            Alert::success('Success', 'Advantage updated successfully');
+            return redirect()->route('advantages.index');
+        } catch (\Exception $e) {
+            DB::rollBack(); // Rollback the transaction if there is an error
+
+            // Display an error message
+            Alert::error('Error', 'Failed to update advantage: ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Advantages $advantages)
+    public function destroy(Advantages $advantages, $id)
     {
-        //
+
+        DB::beginTransaction();
+
+        try {
+            $advantages = Advantages::find($id);
+            $advantages->delete(); // Delete the record
+
+            DB::commit(); // Commit the transaction
+
+            Alert::success('Success', 'Advantages deleted successfully');
+            return redirect()->route('advantages.index');
+        } catch (\Exception $e) {
+            DB::rollBack(); // Rollback the transaction if an exception occurs
+
+            Alert::error('Error', 'Failed to delete advantage: ' . $e->getMessage());
+            return redirect()->back();
+        }
     }
 }

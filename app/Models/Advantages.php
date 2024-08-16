@@ -10,5 +10,6 @@ class Advantages extends Model
     use HasFactory;
 
     protected $table = 'advantages';
+
     protected $fillable = ['title', 'description'];
 }
