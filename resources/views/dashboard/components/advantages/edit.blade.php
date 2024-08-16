@@ -14,7 +14,7 @@
         <!-- Form Start -->
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
-                <h6 class="mb-4">Advantages Form</h6>
+                <h6 class="mb-4">Edit Advantages</h6>
                 <form action="{{ route('advantages.update', $advantages->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf

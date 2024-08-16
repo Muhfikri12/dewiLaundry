@@ -21,7 +21,7 @@
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="{{ route('advantages.index') }}"
                 class="nav-item nav-link {{ request()->is('dashboard/advantages') ? 'active' : '' }}"><i
-                    class="fa fa-tachometer-alt me-2"></i>About Us</a>
+                    class="fa fa-list me-2"></i>Advantages</a>
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
