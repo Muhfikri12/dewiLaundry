@@ -3,7 +3,7 @@
     <!-- Content Start -->
     <div class="content">
         <!-- Navbar Start -->
-        @include('dashboard.navbar')
+        {{-- @include('dashboard.navbar') --}}
         <!-- Navbar End -->
 
 
@@ -13,26 +13,29 @@
                 <div class="col-12">
                     <div class="px-4 py-2 rounded bg-light h-100">
                         <div class="m-2 header-table d-flex justify-content-between align-items-center">
-                            <h6 class="">Advantages Table</h6>
-                            <a class="m-2 btn btn-sm btn-primary" type="button"
-                                href="{{ route('advantages.create') }}"><i class="fa fa-plus me-2"></i>Add
-                                Advantages</a>
+                            <h6 class="">Machines Table</h6>
+                            <a class="m-2 btn btn-sm btn-primary" type="button" href="{{ route('machine.create') }}"><i
+                                    class="fa fa-plus me-2"></i>Add
+                                Machines </a>
                         </div>
                         <div class="table-responsive">
                             <table id="data-table" class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Title</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Picture</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($advantages as $item)
+                                    @foreach ($machine as $item)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $item->title }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td><img style="width: 5rem; height:auto" src="{{ asset($item->photo) }}"
+                                                    alt="{{ $item->name }}"></td>
                                             <td>{!! $item->description !!}</td>
                                             <td>
                                                 <div class="dropdown">
@@ -42,9 +45,9 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('advantages.edit', $item->id) }}"><i
+                                                            href="{{ route('machine.edit', $item->id) }}"><i
                                                                 class="bx bx-edit-alt me-1"></i>Ubah</a>
-                                                        <form action="{{ route('advantages.destroy', $item->id) }}"
+                                                        <form action="{{ route('machine.destroy', $item->id) }}"
                                                             method="POST" id="delete-form-{{ $item->id }}">
                                                             @csrf
                                                             @method('DELETE')
@@ -69,7 +72,7 @@
 
 
         <!-- Footer Start -->
-        @include('dashboard.footer')
+        {{-- @include('dashboard.footer') --}}
         <!-- Footer End -->
     </div>
     <!-- Content End -->

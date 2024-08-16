@@ -13,7 +13,7 @@ class AboutController extends Controller
     public function index()
     {
         return view('dashboard.index', [
-            'main' => 'about'
+            'main' => 'form'
         ]);
     }
 
