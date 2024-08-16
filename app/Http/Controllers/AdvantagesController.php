@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
+use App\Models\Advantages;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class AdvantagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class AboutController extends Controller
     public function index()
     {
         return view('dashboard.index', [
-            'main' => 'about'
+            'main' => 'advantages',
+            'advantages' => Advantages::all()
         ]);
     }
 
@@ -36,7 +37,7 @@ class AboutController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(About $about)
+    public function show(Advantages $advantages)
     {
         //
     }
@@ -44,7 +45,7 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(About $about)
+    public function edit(Advantages $advantages)
     {
         //
     }
@@ -52,7 +53,7 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, Advantages $advantages)
     {
         //
     }
@@ -60,7 +61,7 @@ class AboutController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(About $about)
+    public function destroy(Advantages $advantages)
     {
         //
     }

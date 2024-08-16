@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <div class="mt-3 icon-box">
-                            <p>{{ $about->description }}
+                            <p>{!! $about->description !!}
                             </p>
                         </div>
                         <div>

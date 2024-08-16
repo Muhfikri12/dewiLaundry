@@ -53,7 +53,6 @@
         </div>
     </section><!-- End About Section -->
 
-    <!-- ======= visi misi Section ======= -->
     <section class=" skills" data-aos="fade-up">
         <div class="container">
             <div class="section-title">
@@ -93,92 +92,26 @@
                 <div class="row">
                     <div class="accordion" id="accordionExample">
 
-                        <!-- First Card -->
-                        <div class="card text">
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Satu-satunya laundry hotel profesional di Karawang
-                                    </button>
-                                </h5>
-                            </div>
+                        @foreach ($advantages as $item => $key)
+                            <div class="card text">
+                                <div class="card-header" id="headingOne{{ $item }}">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne{{ $item }}" aria-expanded="false"
+                                            aria-controls="collapseOne{{ $item }}">
+                                            {{ $key->title }}
+                                        </button>
+                                    </h5>
+                                </div>
 
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                data-parent="#accordionExample">
-                                <div class="card-body" style="text-align: left;">
-                                    Laundry ini
-                                    adalah satu-satunya layanan laundry di Karawang yang melayani
-                                    khusus hotel dengan standar kebersihan dan kualitas tinggi yang
-                                    dibutuhkan oleh industri perhotelan.
+                                <div id="collapseOne{{ $item }}" class="collapse"
+                                    aria-labelledby="headingOne{{ $item }}" data-parent="#accordionExample">
+                                    <div class="card-body" style="text-align: left;">
+                                        {!! $key->description !!}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Second Card -->
-                        <div class="card text">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Berada di lokasi yang strategis di tengah kota Karawang
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordionExample">
-                                <div class="card-body" style="text-align: left;">
-                                    Terletak di
-                                    pusat kota, lokasi laundry ini sangat mudah dijangkau dari berbagai
-                                    sudut kota, memudahkan akses bagi hotel-hotel di sekitarnya.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Third Card -->
-                        <div class="card text">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        Memiliki beberapa anak cabang yang tersebar di beberapa tempat di
-                                        Karawang
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordionExample">
-                                <div class="card-body" style="text-align: left;">
-                                    Selain lokasi utamanya, laundry ini memiliki beberapa
-                                    cabang lain yang tersebar, memungkinkan lebih banyak pelanggan
-                                    untuk mendapatkan layanan dengan mudah.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card text">
-                            <div class="card-header" id="headingFour">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        Dikerjakan dengan menggunakan mesin berteknologi
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                                data-parent="#accordionExample">
-                                <div class="card-body" style="text-align: left;">
-                                    Proses pencucian menggunakan mesin-mesin modern dan berteknologi
-                                    tinggi, memastikan hasil cucian yang lebih bersih, lebih cepat, dan
-                                    kain tetap terawat dengan baik.
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
