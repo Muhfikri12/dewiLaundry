@@ -76,7 +76,10 @@ class MachineController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('dashboard.index', [
+            'main' => 'machines.edit',
+            'machine' => Machines::find($id),
+        ]);
     }
 
     /**
