@@ -87,7 +87,39 @@ class MachineController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $machine = Machines::find($id);
+
+            if ($request->hasFile('photo')) {
+
+                $image = $request->file('photo');
+                $imageName = time() . '-' . $image->hashName();
+                $image->move(public_path('machine'), $imageName);
+
+                if (file_exists(public_path($machine->photo))) {
+                    unlink(public_path($machine->photo));
+                }
+
+                $machine->photo = 'machine/' . $imageName;
+            }
+
+            $machine->name = $request->name;
+            $machine->description = $request->description;
+            $machine->save();
+
+            DB::commit();
+
+            Alert::success('Success', 'Machine updated successfully');
+            return redirect()->route('machine.index');
+        } catch (\Exception $e) {
+
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to update machine.' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
