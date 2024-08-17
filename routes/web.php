@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MachineController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'home'])->name('home');
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/about', AboutController::class);
     Route::resource('dashboard/advantages', AdvantagesController::class);
     Route::resource('dashboard/machine', MachineController::class);
+    Route::resource('dashboard/service', ServiceController::class);
 });
 
 Route::get('/about', function () {

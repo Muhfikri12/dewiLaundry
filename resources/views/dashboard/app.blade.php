@@ -33,6 +33,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+
+
+
+    <!-- CKEditor -->
+    <style>
+        .cke_notification.cke_notification_warning {
+            display: none;
+        }
+    </style>
+    <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -84,8 +95,12 @@
     <script>
         $(document).ready(function() {
             $('#data-table').DataTable();
-            $('#tabel-data2').DataTable();
+            // $('#tabel-data2').DataTable();
         });
+    </script>
+
+    <script>
+        CKEDITOR.replace('about');
     </script>
 </body>
 

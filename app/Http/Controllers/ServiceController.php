@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,39 +13,31 @@ class AboutController extends Controller
     public function index()
     {
         return view('dashboard.index', [
-            'main' => 'profile.index',
-            'about' => About::first(),
+            'main' => 'services.index',
+            'service' => Service::all(),
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {}
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    { {
-            $images = $request->file('file');
-
-            foreach ($images as $index => $image) {
-                $path = $image->store('images', 'public');
-                About::create([
-                    'path' => $path,
-                    'order' => $index + 1,
-                ]);
-            }
-
-            return response()->json(['success' => true]);
-        }
+    {
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(About $about)
+    public function show(Service $service)
     {
         //
     }
@@ -53,7 +45,7 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(About $about)
+    public function edit(Service $service)
     {
         //
     }
@@ -61,7 +53,7 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -69,7 +61,7 @@ class AboutController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(About $about)
+    public function destroy(Service $service)
     {
         //
     }

@@ -18,7 +18,7 @@
     <!-- ======= About Section ======= -->
     <section class="about" data-aos="fade-up">
         <div class="container">
-            <div class="section-title">
+            <div class=".section-title">
                 <h2>About Us</h2>
             </div>
             <div class="row">

@@ -55,37 +55,14 @@
             </div>
             <div class="container">
                 <div class="justify-content-center row">
-
-                    <div class="text-center card-features col-lg-2 col-md-12">
-                        <img src="{{ asset('assets/img/example1.jpg') }}" alt="">
-                        <div class="desc-card">
-                            <a href="">Guest Laundry</a>
+                    @foreach ($service as $item)
+                        <div class="text-center card-features col-lg-2 col-md-12">
+                            <img src="{{ asset($item->image) }}" alt="">
+                            <div class="desc-card">
+                                <h6>{{ $item->title }}</h6>
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center card-features col-lg-2 ">
-                        <img src="{{ asset('assets/img/example2.jpg') }}" alt="">
-                        <div class="desc-card">
-                            <a href="">Linen Room</a>
-                        </div>
-                    </div>
-                    <div class="text-center card-features col-lg-2 ">
-                        <img src="{{ asset('assets/img/example3.jpg') }}" alt="">
-                        <div class="desc-card">
-                            <a href="">Rent Linen Room</a>
-                        </div>
-                    </div>
-                    <div class="text-center card-features col-lg-2 ">
-                        <img src="{{ asset('assets/img/example4.jpg') }}" alt="">
-                        <div class="desc-card">
-                            <a href="">Carpet, Bedcover & Etc</a>
-                        </div>
-                    </div>
-                    <div class="text-center card-features col-lg-2 ">
-                        <img src="{{ asset('assets/img/example5.jpg') }}" alt="">
-                        <div class="desc-card">
-                            <a href="">Employee Uniform</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
