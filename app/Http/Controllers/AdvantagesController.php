@@ -116,7 +116,7 @@ class AdvantagesController extends Controller
 
             DB::commit(); // Commit the transaction
 
-            Alert::success('Success', 'Advantages deleted successfully');
+            Alert::success('Success', 'Advantage deleted successfully');
             return redirect()->route('advantages.index');
         } catch (\Exception $e) {
             DB::rollBack(); // Rollback the transaction if an exception occurs

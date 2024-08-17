@@ -127,6 +127,21 @@ class MachineController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $machine = Machines::find($id);
+            $machine->delete();
+
+            DB::commit();
+
+            Alert::success('Success', 'Machine deleted successfully');
+            return redirect()->route('machine.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to delete machine.' . $e->getMessage());
+            return redirect()->back();
+        }
     }
 }
