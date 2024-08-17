@@ -30,7 +30,7 @@ class LandingPageController extends Controller
     {
         return view('landing_page.main', [
             'main' => 'service',
-            'machine' => Machines::all(),
+            'machine' => Machines::paginate(6),
         ]);
     }
 
