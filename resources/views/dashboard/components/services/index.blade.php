@@ -45,9 +45,9 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('machine.edit', $item->id) }}"><i
+                                                            href="{{ route('service.edit', $item->id) }}"><i
                                                                 class="bx bx-edit-alt me-1"></i>Ubah</a>
-                                                        <form action="{{ route('machine.destroy', $item->id) }}"
+                                                        <form action="{{ route('service.destroy', $item->id) }}"
                                                             method="POST" id="delete-form-{{ $item->id }}">
                                                             @csrf
                                                             @method('DELETE')
