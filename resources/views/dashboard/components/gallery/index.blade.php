@@ -13,10 +13,10 @@
                 <div class="col-12">
                     <div class="px-4 py-2 rounded bg-light h-100">
                         <div class="m-2 header-table d-flex justify-content-between align-items-center">
-                            <h6 class="">Service Table</h6>
+                            <h6 class="">Gallery Table</h6>
                             <a class="m-2 btn btn-sm btn-primary" type="button" href="{{ route('galery.create') }}"><i
                                     class="fa fa-plus me-2"></i>Add
-                                Services </a>
+                                Gallery </a>
                         </div>
                         <div class="table-responsive">
                             <table id="data-table" class="table">

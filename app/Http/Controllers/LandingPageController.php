@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Advantages;
+use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class LandingPageController extends Controller
             'main' => 'home',
             'about' => About::first(),
             'service' => Service::all(),
+            'gallery' => Galery::paginate(6)
 
         ]);
     }

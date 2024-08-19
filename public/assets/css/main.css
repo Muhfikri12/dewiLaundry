@@ -331,3 +331,9 @@
 .form-label {
     font-weight: 500;
 }
+
+@media (max-width: 425px) {
+    .gallery-form {
+        gap: 1rem;
+    }
+}

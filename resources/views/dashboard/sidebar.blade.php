@@ -35,7 +35,7 @@
                 <div class="m-0 bg-transparent border-0 dropdown-menu">
                     <a href="{{ route('about.index') }}" class="dropdown-item nav-item nav-link">About
                         Us</a>
-                    <a href="{{ route('galery.index') }}" class="dropdown-item nav-item nav-link">Galleries</a>
+                    <a href="{{ route('galery.index') }}" class="dropdown-item nav-item nav-link">Gallery</a>
 
                 </div>
             </div>
