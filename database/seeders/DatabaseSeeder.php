@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             AdvantagesSeeder::class,
             MachinesSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            GalerySeeder::class
         ]);
     }
 }

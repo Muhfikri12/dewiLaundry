@@ -57,7 +57,7 @@
                 <div class="justify-content-center row">
                     @foreach ($service as $item)
                         <div class="text-center card-features col-lg-2 col-md-12">
-                            <img src="{{ asset($item->image) }}" alt="">
+                            <img src="{{ Storage::url($item->image) }}" alt="">
                             <div class="desc-card">
                                 <h6>{{ $item->title }}</h6>
                             </div>
@@ -77,14 +77,16 @@
 
                 <div class="row">
                     <div class="col-lg-6 video-box">
-                        <img src="{{ $about->photo }}" class="img-fluid" alt="">
+                        <img src="{{ Storage::url($about->photo) }}" class="img-fluid" alt="">
                         <a href="https://youtu.be/SDROba_M42g?si=bguzuhObDMOEJRcY" class="mb-4 venobox play-btn"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
-                        <div class="mt-3 icon-box">
-                            <p>{!! $about->description !!}
-                            </p>
+                        <div class="icon-box">
+                            <small>
+                                <p>{!! $about->description !!}
+                                </p>
+                            </small>
                         </div>
                         <div>
                             <div class="read-more"><a href="{{ route('about') }}"><i class="bi bi-arrow-right"></i> Read

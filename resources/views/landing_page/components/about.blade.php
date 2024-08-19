@@ -10,30 +10,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                    <img src="{{ Storage::url($about->photo) }}" class="img-fluid" alt="">
                 </div>
-                <div class="pt-4 col-lg-6 pt-lg-0">
-                    <p><span style="font-weight: 600">PT. KIMOZA PRIMA JAYA ( Dewi Laundry )</span> didirikan pada
-                        tahun 2018 dengan semangat
-                        untuk memberikan layanan laundry terbaik bagi masyarakat Karawang. Berawal
-                        dari usaha laundry rumahan, kami terus berkembang dan berinovasi hingga
-                        menjadi laundry profesional terdepan di Karawang.
-                    </p>
-                    <p>
-                        Komitmen kami tidak hanya pada kebersihan dan ketepatan waktu, tetapi juga
-                        membangun kepercayaan dan menjalin hubungan jangka panjang dengan
-                        para pelanggan. Kami memahami kebutuhan hotel dan perusahaan di
-                        Karawang, dan kami dedikasikan layanan kami untuk memenuhi kebutuhan
-                        mereka dengan sepenuh hati.
-                    </p>
-                    <p>
-                        Dengan pengalaman dan dedikasi <span style="font-weight: 600">PT. KIMOZA PRIMA JAYA</span>
-                        telah menjadi
-                        mitra terpercaya bagi banyak hotel dan perusahaan di Karawang. Kami bangga
-                        atas kepercayaan yang diberikan kepada <span style="font-weight: 600">PT. KIMOZA PRIMA
-                            JAYA</span>, dan kami
-                        terus berusaha untuk memberikan layanan terbaik bagi para pelanggan
-                    </p>
+                <div class=" col-lg-6 pt-lg-0">
+                    <small>
+                        <p>{!! $about->description !!}</p>
+                    </small>
                 </div>
             </div>
 

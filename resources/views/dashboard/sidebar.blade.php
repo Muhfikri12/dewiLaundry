@@ -30,12 +30,12 @@
                     class="fa fa-cogs me-2"></i>Service</a>
             <div class="nav-item dropdown">
                 <a href="#"
-                    class="nav-item nav-link {{ request()->is('dashboard/about') ? 'active' : '' }} dropdown-toggle"
+                    class="nav-item nav-link {{ request()->is('dashboard/about', 'dashboard/galery') ? 'active' : '' }} dropdown-toggle"
                     data-bs-toggle="dropdown"><i class="fa fa-landmark me-2"></i>Company Profile</a>
                 <div class="m-0 bg-transparent border-0 dropdown-menu">
                     <a href="{{ route('about.index') }}" class="dropdown-item nav-item nav-link">About
                         Us</a>
-                    <a href="{{ route('about.index') }}" class="dropdown-item nav-item nav-link">Galleries</a>
+                    <a href="{{ route('galery.index') }}" class="dropdown-item nav-item nav-link">Galleries</a>
 
                 </div>
             </div>

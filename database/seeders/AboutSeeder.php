@@ -16,7 +16,7 @@ class AboutSeeder extends Seeder
         About::create([
             'description' => 'PT. KIMOZA PRIMA JAYA ( Dewi Laundry ) didirikan pada tahun 2018 dengan semangat untuk memberikan layanan laundry terbaik bagi masyarakat Karawang. Berawal dari usaha laundry rumahan, kami terus berkembang dan berinovasi hingga menjadi laundry profesional terdepan di Karawang.
                             Komitmen kami tidak hanya pada kebersihan dan ketepatan waktu, tetapi juga membangun kepercayaan dan menjalin hubungan jangka panjang dengan para pelanggan. Kami memahami kebutuhan hotel dan perusahaan di Karawang, dan kami dedikasikan layanan kami untuk memenuhi kebutuhan mereka dengan sepenuh hati.',
-            'photo' => 'assets/img/about.jpg'
+            'photo' => 'about/about.jpg'
         ]);
     }
 }

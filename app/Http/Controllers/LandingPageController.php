@@ -24,6 +24,7 @@ class LandingPageController extends Controller
     {
         return view('landing_page.main', [
             'main' => 'about',
+            'about' => About::first(),
             'advantages' => Advantages::all()
         ]);
     }

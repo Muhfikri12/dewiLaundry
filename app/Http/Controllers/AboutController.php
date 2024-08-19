@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AboutController extends Controller
 {
@@ -16,6 +18,7 @@ class AboutController extends Controller
         return view('dashboard.index', [
             'main' => 'profile.index',
             'about' => About::first(),
+
         ]);
     }
 
@@ -27,23 +30,7 @@ class AboutController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    { {
-            if ($request->hasFile('file') && $request->file('file')->isValid()) {
-                $file = $request->file('file');
-                $filePath = $file->store('images', 'public');
-
-                // Optionally, save the file path to the database
-                // $image = new Image();
-                // $image->path = $filePath;
-                // $image->save();
-
-                return response()->json(['fileUrl' => Storage::url($filePath)], 200);
-            }
-
-            return response()->json(['error' => 'Invalid file upload'], 400);
-        }
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.
@@ -64,9 +51,46 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, About $about,)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $about = About::find(1);
+
+            if ($request->hasFile('photo')) {
+                // Check if there's an existing photo and delete it
+                if ($about && $about->photo) {
+                    Storage::disk('public')->delete($about->photo);
+                }
+
+                // Store the new photo
+                $image = $request->file('photo');
+                $imageName = time() . '-' . $image->hashName();
+                $path = $image->storeAs('about', $imageName, 'public');
+
+                // Update the database with the new photo path
+                $about->update([
+                    'photo' => $path,
+                    'description' => $request->input('description')
+                ]);
+            } else {
+                // If no photo is uploaded, just update the description
+                $about->update([
+                    'description' => $request->input('description')
+                ]);
+            }
+
+            DB::commit();
+
+            Alert::success('Success', 'About Us updated successfully.');
+            return redirect()->route('about.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to update about us. ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
