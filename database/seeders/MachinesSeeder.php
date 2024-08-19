@@ -16,32 +16,32 @@ class MachinesSeeder extends Seeder
         $machine = [
             [
                 'name' => 'Kapsul 40Kg',
-                'photo' => 'assets/img/portfolio/portfolio-1.jpg',
+                'photo' => 'machine/portfolio-1.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, incidunt.'
             ],
             [
                 'name' => 'Dryer 40Kg',
-                'photo' => 'assets/img/portfolio/portfolio-2.jpg',
+                'photo' => 'machine/portfolio-2.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio accusantium iusto accusamus obcaecati. Minima in atque maxime iure reprehenderit.'
             ],
             [
                 'name' => 'Dryer 30Kg',
-                'photo' => 'assets/img/portfolio/portfolio-3.jpg',
+                'photo' => 'machine/portfolio-3.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio accusantium iusto accusamus obcaecati. Minima in atque maxime iure reprehenderit.'
             ],
             [
                 'name' => 'Extractor 40Kg',
-                'photo' => 'assets/img/portfolio/portfolio-4.jpg',
+                'photo' => 'machine/portfolio-4.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio accusantium iusto accusamus obcaecati. Minima in atque maxime iure reprehenderit.'
             ],
             [
                 'name' => 'Frond Loading 40Kg',
-                'photo' => 'assets/img/portfolio/portfolio-5.jpg',
+                'photo' => 'machine/portfolio-5.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio accusantium iusto accusamus obcaecati. Minima in atque maxime iure reprehenderit.'
             ],
             [
                 'name' => 'Dryer 20Kg',
-                'photo' => 'assets/img/portfolio/portfolio-5.jpg',
+                'photo' => 'machine/portfolio-6.jpg',
                 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio accusantium iusto accusamus obcaecati. Minima in atque maxime iure reprehenderit.'
             ],
         ];

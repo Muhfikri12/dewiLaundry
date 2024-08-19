@@ -6,6 +6,7 @@ use App\Http\Requests\MachineRequest;
 use App\Models\Machines;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class MachineController extends Controller
@@ -31,9 +32,6 @@ class MachineController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(MachineRequest $request)
     {
         DB::beginTransaction();
@@ -42,11 +40,11 @@ class MachineController extends Controller
             if ($request->hasFile('photo')) {
                 $image = $request->file('photo');
                 $imageName = time() . '-' . $image->hashName();
-                $image->move(public_path('machine'), $imageName);
+                $path = $image->storeAs('machine', $imageName, 'public');
 
                 Machines::create([
                     'name' => $request->input('name'),
-                    'photo' => 'machine/' . $imageName,
+                    'photo' => $path,
                     'description' => $request->input('description')
                 ]);
 
@@ -58,7 +56,7 @@ class MachineController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to create machine.' . $e->getMessage());
+            Alert::error('Error', 'Failed to create machine. ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -82,9 +80,6 @@ class MachineController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         DB::beginTransaction();
@@ -93,31 +88,34 @@ class MachineController extends Controller
             $machine = Machines::find($id);
 
             if ($request->hasFile('photo')) {
+                if ($machine->photo && Storage::disk('public')->exists($machine->photo)) {
+                    Storage::disk('public')->delete($machine->photo);
+                }
 
                 $image = $request->file('photo');
                 $imageName = time() . '-' . $image->hashName();
-                $image->move(public_path('machine'), $imageName);
+                $path = $image->storeAs('machine', $imageName, 'public');
 
-                if (file_exists(public_path($machine->photo))) {
-                    unlink(public_path($machine->photo));
-                }
-
-                $machine->photo = 'machine/' . $imageName;
+                $machine->update([
+                    'name' => $request->input('name'),
+                    'photo' => $path,
+                    'description' => $request->input('description')
+                ]);
+            } else {
+                $machine->update([
+                    'name' => $request->input('name'),
+                    'description' => $request->input('description')
+                ]);
             }
-
-            $machine->name = $request->name;
-            $machine->description = $request->description;
-            $machine->save();
 
             DB::commit();
 
-            Alert::success('Success', 'Machine updated successfully');
+            Alert::success('Success', 'Machine updated successfully.');
             return redirect()->route('machine.index');
         } catch (\Exception $e) {
-
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to update machine.' . $e->getMessage());
+            Alert::error('Error', 'Failed to update machine. ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -130,17 +128,22 @@ class MachineController extends Controller
         DB::beginTransaction();
 
         try {
-            $machine = Machines::find($id);
+            $machine = Machines::findOrFail($id);
+
+            if ($machine->photo && Storage::disk('public')->exists($machine->photo)) {
+                Storage::disk('public')->delete($machine->photo);
+            }
+
             $machine->delete();
 
             DB::commit();
 
-            Alert::success('Success', 'Machine deleted successfully');
+            Alert::success('Success', 'Machine deleted successfully.');
             return redirect()->route('machine.index');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to delete machine.' . $e->getMessage());
+            Alert::error('Error', 'Failed to delete machine. ' . $e->getMessage());
             return redirect()->back();
         }
     }

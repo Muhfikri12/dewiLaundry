@@ -1,7 +1,7 @@
 <div class="pb-3 sidebar pe-4">
     <nav class="navbar bg-light navbar-light">
-        <a href="index.html" class="mx-4 mb-3 navbar-brand">
-            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Dewi</h3>
+        <a href="index.html" class="mx-auto my-3 navbar-brand justify-content-center">
+            <h5 class="text-primary"><i class="fa fa-hashtag me-2"></i>Dewi Laundry</h5>
         </a>
         <div class="mb-4 d-flex align-items-center ms-4">
             <div class="position-relative">
@@ -26,7 +26,7 @@
                 class="nav-item nav-link {{ request()->is('dashboard/machine') ? 'active' : '' }}"><i
                     class="fa fa-biohazard me-2"></i>Machine</a>
             <a href="{{ route('service.index') }}"
-                class="nav-item nav-link {{ request()->is('dashboard/machine') ? 'active' : '' }}"><i
+                class="nav-item nav-link {{ request()->is('dashboard/service') ? 'active' : '' }}"><i
                     class="fa fa-cogs me-2"></i>Service</a>
             <div class="nav-item dropdown">
                 <a href="#"
@@ -35,9 +35,8 @@
                 <div class="m-0 bg-transparent border-0 dropdown-menu">
                     <a href="{{ route('about.index') }}" class="dropdown-item nav-item nav-link">About
                         Us</a>
-                    <a href="signup.html" class="dropdown-item">Sign Up</a>
-                    <a href="404.html" class="dropdown-item">404 Error</a>
-                    <a href="blank.html" class="dropdown-item">Blank Page</a>
+                    <a href="{{ route('about.index') }}" class="dropdown-item nav-item nav-link">Galleries</a>
+
                 </div>
             </div>
         </div>

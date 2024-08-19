@@ -9,7 +9,7 @@
             <div class="justify-content-center row">
                 @foreach ($service as $item)
                     <div class="text-center card-features col-lg-2 col-md-12">
-                        <img src="{{ asset($item->image) }}" alt="">
+                        <img src="{{ Storage::url($item->image) }}" alt="">
                         <div class="desc-card">
                             <h6>{{ $item->title }}</h6>
                         </div>
@@ -56,7 +56,7 @@
                     <div class="machine col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="card">
                             <div class="card-img">
-                                <img src="{{ asset($item->photo) }}" alt="...">
+                                <img src="{{ Storage::url($item->photo) }}" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">{{ $item->name }}</a></h5>

@@ -6,6 +6,7 @@ use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ServiceController extends Controller
@@ -42,11 +43,11 @@ class ServiceController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . '-' . $image->hashName();
-                $image->move(public_path('service'), $imageName);
+                $path = $image->storeAs('service', $imageName, 'public');
 
                 Service::create([
                     'title' => $request->input('title'),
-                    'image' => 'service/' . $imageName,
+                    'image' => $path,
                     'description' => $request->input('description')
                 ]);
 
@@ -58,7 +59,7 @@ class ServiceController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to create service.' . $e->getMessage());
+            Alert::error('Error', 'Failed to create service. ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
@@ -93,21 +94,25 @@ class ServiceController extends Controller
             $service = Service::find($id);
 
             if ($request->hasFile('image')) {
+                if ($service->image && Storage::disk('public')->exists($service->image)) {
+                    Storage::disk('public')->delete($service->image);
+                }
 
                 $image = $request->file('image');
                 $imageName = time() . '-' . $image->hashName();
-                $image->move(public_path('service'), $imageName);
+                $path = $image->storeAs('service', $imageName, 'public');
 
-                if (file_exists(public_path($service->image))) {
-                    unlink(public_path($service->image));
-                }
-
-                $service->image = 'service/' . $imageName;
+                $service->update([
+                    'title' => $request->input('title'),
+                    'image' => $path,
+                    'description' => $request->input('description')
+                ]);
+            } else {
+                $service->update([
+                    'title' => $request->input('title'),
+                    'description' => $request->input('description')
+                ]);
             }
-
-            $service->title = $request->title;
-            $service->description = $request->description;
-            $service->save();
 
             DB::commit();
 
@@ -130,17 +135,22 @@ class ServiceController extends Controller
         DB::beginTransaction();
 
         try {
-            $service = Service::find($id);
+            $service = Service::findOrFail($id);
+
+            if ($service->image && Storage::disk('public')->exists($service->image)) {
+                Storage::disk('public')->delete($service->image);
+            }
+
             $service->delete();
 
             DB::commit();
 
-            Alert::success('Success', 'Service deleted successfully');
+            Alert::success('Success', 'Service deleted successfully.');
             return redirect()->route('service.index');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to delete service.' . $e->getMessage());
+            Alert::error('Error', 'Failed to delete service. ' . $e->getMessage());
             return redirect()->back();
         }
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -28,17 +29,19 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     { {
-            $images = $request->file('file');
+            if ($request->hasFile('file') && $request->file('file')->isValid()) {
+                $file = $request->file('file');
+                $filePath = $file->store('images', 'public');
 
-            foreach ($images as $index => $image) {
-                $path = $image->store('images', 'public');
-                About::create([
-                    'path' => $path,
-                    'order' => $index + 1,
-                ]);
+                // Optionally, save the file path to the database
+                // $image = new Image();
+                // $image->path = $filePath;
+                // $image->save();
+
+                return response()->json(['fileUrl' => Storage::url($filePath)], 200);
             }
 
-            return response()->json(['success' => true]);
+            return response()->json(['error' => 'Invalid file upload'], 400);
         }
     }
 

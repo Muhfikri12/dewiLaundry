@@ -315,3 +315,19 @@
     left: calc(50% - 20px);
 }
 /* Table Responsive */
+
+/* page about */
+.about .image {
+    align-items: center;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
+
+.about img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-label {
+    font-weight: 500;
+}

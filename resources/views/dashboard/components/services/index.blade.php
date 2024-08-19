@@ -34,8 +34,9 @@
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $item->title }}</td>
-                                            <td><img style="width: 5rem; height:auto" src="{{ asset($item->image) }}"
-                                                    alt="{{ $item->name }}"></td>
+                                            <td><img style="width: 5rem; height:auto"
+                                                    src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}">
+                                            </td>
                                             <td>{!! $item->description !!}</td>
                                             <td>
                                                 <div class="dropdown">

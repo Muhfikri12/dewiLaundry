@@ -14,7 +14,7 @@
         <!-- Form Start -->
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
-                <h6 class="mb-4">Machine Form</h6>
+                <h5 class="mb-4">Machine Form</h5>
                 <form action="{{ route('machine.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
@@ -46,7 +46,7 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

@@ -14,7 +14,7 @@
         <!-- Form Start -->
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
-                <h6 class="mb-4">Advantages Form</h6>
+                <h5 class="mb-4">Advantages Form</h5>
                 <form action="{{ route('advantages.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">

@@ -13,7 +13,7 @@
                 <div class="col-12">
                     <div class="px-4 py-2 rounded bg-light h-100">
                         <div class="m-2 header-table d-flex justify-content-between align-items-center">
-                            <h6 class="">Advantages Table</h6>
+                            <h5 class="">Advantages Table</h5>
                             <a class="m-2 btn btn-sm btn-primary" type="button"
                                 href="{{ route('advantages.create') }}"><i class="fa fa-plus me-2"></i>Add
                                 Advantages</a>

@@ -16,27 +16,27 @@ class ServiceSeeder extends Seeder
         $service = [
             [
                 'name' => 'Guest Laundry',
-                'photo' => 'assets/img/example1.jpg',
+                'photo' => 'service/example1.jpg',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum natus excepturi asperiores reprehenderit eius facilis veniam ratione blanditiis culpa nam!'
             ],
             [
                 'name' => 'Linen Laundry',
-                'photo' => 'assets/img/example2.jpg',
+                'photo' => 'service/example2.jpg',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum natus excepturi asperiores reprehenderit eius facilis veniam ratione blanditiis culpa nam!'
             ],
             [
                 'name' => 'Rent Linen Room',
-                'photo' => 'assets/img/example3.jpg',
+                'photo' => 'service/example3.jpg',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum natus excepturi asperiores reprehenderit eius facilis veniam ratione blanditiis culpa nam!'
             ],
             [
                 'name' => 'Carpet, Bedcover & Etc',
-                'photo' => 'assets/img/example4.jpg',
+                'photo' => 'service/example4.jpg',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum natus excepturi asperiores reprehenderit eius facilis veniam ratione blanditiis culpa nam!'
             ],
             [
                 'name' => 'Uniform Laundry',
-                'photo' => 'assets/img/example5.jpg',
+                'photo' => 'service/example5.jpg',
                 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum natus excepturi asperiores reprehenderit eius facilis veniam ratione blanditiis culpa nam!'
             ],
         ];
