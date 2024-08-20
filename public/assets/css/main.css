@@ -346,5 +346,11 @@
 
     .company-logo img {
         width: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .company-logo {
+        display: flex;
+        justify-content: space-between;
     }
 }

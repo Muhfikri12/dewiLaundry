@@ -803,6 +803,11 @@ section {
         width: 50%;
     }
 
+    .team .member img {
+        height: 189px;
+        object-fit: cover;
+    }
+
     .team .row {
         display: flex;
         flex-wrap: wrap;

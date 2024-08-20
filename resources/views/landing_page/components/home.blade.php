@@ -109,51 +109,37 @@
             <div class="container">
 
                 <div class="row gy-5 justify-content-center">
-                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="member-info">
-                            <h4>Yusuf Agung Nugroho</h4>
-                            <span>Owner</span>
-                            <p>Owner</p>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+                    @foreach ($teams as $item)
+                        <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="pic"><img src="{{ Storage::url($item->photo) }}" class="img-fluid"
+                                    alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>{{ $item->name }}</h4>
+                                <span>{{ $item->position }}</span>
+                                <p>{{ $item->position }}</p>
+                                <div class="social">
+                                    @if ($item->x_link)
+                                        <a href="{{ $item->x_link }}"><i class="bi bi-twitter-x"></i></a>
+                                    @endif
+
+                                    @if ($item->fb_link)
+                                        <a href="{{ $item->fb_link }}"><i class="bi bi-facebook"></i></a>
+                                    @endif
+
+                                    @if ($item->ig_link)
+                                        <a href="{{ $item->ig_link }}"><i class="bi bi-instagram"></i></a>
+                                    @endif
+
+                                    @if ($item->linkedIn_link)
+                                        <a href="{{ $item->linkedIn_link }}"><i class="bi bi-linkedin"></i></a>
+                                    @endif
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="member-info">
-                            <h4>Ilham Bahtiar</h4>
-                            <span>Grand Manager</span>
-                            <p>Grand Manager</p>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="member col-lg-4 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="member-info">
-                            <h4>Yubi Abdillah</h4>
-                            <span>Manager Operational</span>
-                            <p>Manager Operational</p>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </section><!-- /Team Section -->

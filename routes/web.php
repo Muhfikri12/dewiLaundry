@@ -8,6 +8,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MachineController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'home'])->name('home');
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/machine', MachineController::class);
     Route::resource('dashboard/service', ServiceController::class);
     Route::resource('dashboard/galery', GaleryController::class);
+    Route::resource('dashboard/team', TeamController::class);
 });
 
 Route::get('/about', function () {

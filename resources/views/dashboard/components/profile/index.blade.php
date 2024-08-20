@@ -162,35 +162,100 @@
                     {{-- Contact Start --}}
                     <div class="col-lg-6 col-sm-12">
                         <div class="px-4 py-2 rounded bg-light h-100">
-                            <div class="m-2 header-table d-flex justify-content-center align-items-center">
-                                <div class="section-title-dashboard">
-                                    <h5>Vision & Mission</h5>
+                            <div class="m-2 header-table">
+                                <div class="m-2 header-table d-flex justify-content-center align-items-center">
+                                    <div class="section-title-dashboard">
+                                        <h5>Clients</h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <a class="m-2 btn btn-sm btn-primary" type="button"
+                                        href="{{ route('team.create') }}"><i class="fa fa-plus me-2"></i>Add
+                                        Client</a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="data-table" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Picture</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($contactTest as $item)
+                                                <tr>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td><img style="width: 5rem; height:auto"
+                                                            src="{{ Storage::url($item->logo) ?? asset($$item->photo) }}"
+                                                            alt="{{ $item->name }}">
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button type="button" class="p-0 btn hide-arrow"
+                                                                data-bs-toggle="dropdown">
+                                                                <i class="p-1 fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('machine.edit', $item->id) }}"><i
+                                                                        class="bx bx-edit-alt me-1"></i>Ubah</a>
+                                                                <form
+                                                                    action="{{ route('machine.destroy', $item->id) }}"
+                                                                    method="POST"
+                                                                    id="delete-form-{{ $item->id }}">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <a class="dropdown-item"
+                                                                        href="javascript:void(0);"
+                                                                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();">
+                                                                        <i class="bx bx-trash me-1"></i> Hapus
+                                                                    </a>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <form action="{{ route('visiMission.update', 1) }}" method="POST"
-                                enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="mb-3">
-                                    <label for="vision" class="form-label">Vision</label>
-                                    <textarea name="vision" id="vision" cols="" rows="" class="py-2"> {{ $visiMission->vision }}</textarea>
-
-                                    @error('vision')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mission" class="form-label">Mission</label>
-                                    <textarea name="mission" id="mission" class="py-2"> {{ $visiMission->mission }}</textarea>
-                                    @error('mission')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <button type="submit" class="btn btn-primary">Save</button>
-                            </form>
                         </div>
                     </div>
                     {{-- Contact end --}}
+                </div>
+                <div class="pt-4">
+                    <div class="px-4 py-2 rounded bg-light h-100">
+                        <div class="m-2 header-table d-flex justify-content-center align-items-center">
+                            <div class="section-title-dashboard">
+                                <h5>Vision & Mission</h5>
+                            </div>
+                        </div>
+                        <form action="{{ route('visiMission.update', 1) }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label for="vision" class="form-label">Vision</label>
+                                <textarea name="vision" id="vision" cols="" rows="" class="py-2"> {{ $visiMission->vision }}</textarea>
+
+                                @error('vision')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="mission" class="form-label">Mission</label>
+                                <textarea name="mission" id="mission" class="py-2"> {{ $visiMission->mission }}</textarea>
+                                @error('mission')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,6 +22,7 @@ class AboutController extends Controller
             'about' => About::first(),
             'contact' => Contact::first(),
             'visiMission' => VisiMission::first(),
+            'contactTest' => Contact::all(),
 
         ]);
     }

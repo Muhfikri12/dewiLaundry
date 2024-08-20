@@ -7,6 +7,7 @@ use App\Models\Advantages;
 use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
+use App\Models\Team;
 use App\Models\VisiMission;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class LandingPageController extends Controller
             'main' => 'home',
             'about' => About::first(),
             'service' => Service::all(),
-            'gallery' => Galery::paginate(6)
+            'gallery' => Galery::paginate(6),
+            'teams' => Team::all(),
 
         ]);
     }
@@ -30,6 +32,7 @@ class LandingPageController extends Controller
             'about' => About::first(),
             'advantages' => Advantages::all(),
             'visiMission' => VisiMission::first(),
+
         ]);
     }
 

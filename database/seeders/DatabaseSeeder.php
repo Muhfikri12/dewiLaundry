@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             GalerySeeder::class,
             ContactSeeder::class,
-            VisiMissionSeeder::class
+            VisiMissionSeeder::class,
+            TeamSeeder::class
         ]);
     }
 }
