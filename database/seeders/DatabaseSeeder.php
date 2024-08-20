@@ -28,7 +28,9 @@ class DatabaseSeeder extends Seeder
             AdvantagesSeeder::class,
             MachinesSeeder::class,
             ServiceSeeder::class,
-            GalerySeeder::class
+            GalerySeeder::class,
+            ContactSeeder::class,
+            VisiMissionSeeder::class
         ]);
     }
 }

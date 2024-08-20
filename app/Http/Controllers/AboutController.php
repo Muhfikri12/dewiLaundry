@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Contact;
+use App\Models\VisiMission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +20,8 @@ class AboutController extends Controller
         return view('dashboard.index', [
             'main' => 'profile.index',
             'about' => About::first(),
+            'contact' => Contact::first(),
+            'visiMission' => VisiMission::first(),
 
         ]);
     }
@@ -25,7 +29,30 @@ class AboutController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {}
+    public function updateVisiMission(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            $visiMission = visiMission::find(1);
+
+            $visiMission->update([
+                'vision' => $request->input('vision'),
+                'mission' => $request->input('mission')
+            ]);
+
+            DB::commit(); // Commit the transaction
+
+            // Display a success message
+            Alert::success('Success', 'Vision & Mission updated successfully');
+            return redirect()->route('about.index');
+        } catch (\Exception $e) {
+            DB::rollBack(); // Rollback the transaction if there is an error
+
+            // Display an error message
+            Alert::error('Error', 'Failed to update vision & mission: ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,9 +70,54 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(About $about)
+    public function updateContact(Request $request)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $contact = Contact::find(1);
+
+            if ($request->hasFile('logo')) {
+                if ($contact && $contact->logo) {
+                    Storage::disk('public')->delete($contact->logo);
+                }
+
+                $image = $request->file('logo');
+                $imageName = time() . '-' . $image->hashName();
+                $path = $image->storeAs('contact', $imageName, 'public');
+
+                $contact->update([
+                    'logo' => $path,
+                    'name' => $request->input('name'),
+                    'email' => $request->input('email'),
+                    'phone' => $request->input('phone'),
+                    'ig_link' => $request->input('instagram'),
+                    'fb_link' => $request->input('facebook'),
+                    'wa_link' => $request->input('whatsapp'),
+                    'linkedIn_link' => $request->input('linkedIn'),
+                ]);
+            } else {
+                $contact->update([
+                    'name' => $request->input('name'),
+                    'email' => $request->input('email'),
+                    'phone' => $request->input('phone'),
+                    'ig_link' => $request->input('instagram'),
+                    'fb_link' => $request->input('facebook'),
+                    'wa_link' => $request->input('whatsapp'),
+                    'linkedIn_link' => $request->input('linkedIn'),
+                ]);
+            }
+
+            DB::commit();
+
+            Alert::success('Success', 'Contact Us updated successfully.');
+            return redirect()->route('about.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to update about us. ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
     }
 
     /**

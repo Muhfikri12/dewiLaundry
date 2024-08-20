@@ -7,6 +7,7 @@ use App\Models\Advantages;
 use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
+use App\Models\VisiMission;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -27,7 +28,8 @@ class LandingPageController extends Controller
         return view('landing_page.main', [
             'main' => 'about',
             'about' => About::first(),
-            'advantages' => Advantages::all()
+            'advantages' => Advantages::all(),
+            'visiMission' => VisiMission::first(),
         ]);
     }
 

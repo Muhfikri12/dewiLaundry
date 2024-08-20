@@ -32,18 +32,12 @@
                     <div class="pb-0 section-title">
                         <h4>Vision</h4>
                     </div>
-                    <p>Menjadi perusahaan jasa laundry profesional dengan mengedapankan
-                        hasil dan kualitas terbaik.</p>
+                    <p>{!! $visiMission->vision !!}</p>
 
                     <div class="pb-0 section-title">
                         <h4>Mission</h4>
                     </div>
-                    <p>Memberikan kualitas pencucian yang suci, bersih dan rapi.</p>
-                    <p>Memberikan pelayanan profesional dengan berbasis pada ketepatan
-                        waktu dalam pengantaran laundry.</p>
-                    <p>Memiliki komitment terhadap kesepakatan kerjasama.</p>
-                    <p>Menjadi penyedia jasa yang memiliki kemampuan pengelolaan emosi
-                        dalam memberikan solusi jika terjadi masalah.</p>
+                    <p>{!! $visiMission->mission !!}</p>
                 </div>
                 <div class="order-1 pb-4 col-lg-6 order-lg-2">
                     <img src="assets/img/about.jpg" class="img-fluid" alt="">

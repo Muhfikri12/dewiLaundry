@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('dashboard/about', AboutController::class);
+    Route::put('dashboard/contact', [AboutController::class, 'updateContact'])->name('update.contact');
+    Route::put('dashboard/vision/mission', [AboutController::class, 'updateVisiMission'])->name('visiMission.update');
     Route::resource('dashboard/advantages', AdvantagesController::class);
     Route::resource('dashboard/machine', MachineController::class);
     Route::resource('dashboard/service', ServiceController::class);

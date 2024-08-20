@@ -332,8 +332,19 @@
     font-weight: 500;
 }
 
+.company-logo img {
+    width: 100%;
+}
 @media (max-width: 425px) {
     .gallery-form {
         gap: 1rem;
+    }
+
+    .image-about {
+        margin-top: 1rem;
+    }
+
+    .company-logo img {
+        width: 50%;
     }
 }
