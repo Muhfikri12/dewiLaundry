@@ -102,6 +102,7 @@
         CKEDITOR.replace('about');
         CKEDITOR.replace('vision');
         CKEDITOR.replace('mission');
+        CKEDITOR.replace('whyUs');
     </script>
 </body>
 

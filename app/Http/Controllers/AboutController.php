@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\VisiMission;
+use App\Models\WhyUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -22,7 +23,8 @@ class AboutController extends Controller
             'about' => About::first(),
             'contact' => Contact::first(),
             'visiMission' => VisiMission::first(),
-            'contactTest' => Contact::all(),
+            'whyUs' => WhyUs::first(),
+
 
         ]);
     }
@@ -58,7 +60,44 @@ class AboutController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {}
+    public function updateWhyUs(Request $request)
+    {
+        DB::beginTransaction();
+
+        try {
+            $whyUs = WhyUs::find(1);
+
+            if ($request->hasFile('photo')) {
+                if ($whyUs && $whyUs->photo) {
+                    Storage::disk('public')->delete($whyUs->photo);
+                }
+
+                $image = $request->file('photo');
+                $imageName = time() . '-' . $image->hashName();
+                $path = $image->storeAs('whyUs', $imageName, 'public');
+
+                $whyUs->update([
+                    'photo' => $path,
+                    'description' => $request->input('description'),
+
+                ]);
+            } else {
+                $whyUs->update([
+                    'description' => $request->input('description'),
+                ]);
+            }
+
+            DB::commit();
+
+            Alert::success('Success', 'Why Us updated successfully.');
+            return redirect()->route('about.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to update why us. ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
+    }
 
     /**
      * Display the specified resource.
@@ -111,12 +150,12 @@ class AboutController extends Controller
 
             DB::commit();
 
-            Alert::success('Success', 'Contact Us updated successfully.');
+            Alert::success('Success', 'Contact updated successfully.');
             return redirect()->route('about.index');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            Alert::error('Error', 'Failed to update about us. ' . $e->getMessage());
+            Alert::error('Error', 'Failed to update contact. ' . $e->getMessage());
             return redirect()->back()->withInput();
         }
     }
