@@ -35,7 +35,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="description" class="form-label">Description</label>
+                                        <label for="description" class="form-label">About Us</label>
                                         <textarea name="description" id="about" cols="" rows="" class="py-2"> {{ $about->description }}</textarea>
 
                                         @error('description')

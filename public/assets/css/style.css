@@ -622,7 +622,10 @@ section {
 }
 
 .section-bg {
-    background-color: #3073a7;
+    background-image: url("/assets/img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* opacity: 0.3 */
 }
 
 .section-bg-service {
@@ -2592,3 +2595,32 @@ section {
 }
 
 /* Dashboard Table */
+
+.detail-service-section h5 {
+    font-weight: 600;
+}
+
+.detail-service-section {
+    background-image: url("/assets/img/bg.jpg");
+    /* background-size: cover; */
+    /* background-position: center; */
+    box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.detail-service-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.5;
+}

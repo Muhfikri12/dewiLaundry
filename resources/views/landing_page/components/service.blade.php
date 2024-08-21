@@ -18,7 +18,7 @@
             </div>
         </div>
     </section>
-    <section class="why-us section-bg-service" data-aos="fade-up" date-aos-delay="200">
+    <section class="why-us " data-aos="fade-up" date-aos-delay="200">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 video-box">
@@ -34,9 +34,21 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section><!-- End Why Us Section -->
+
+    <section class="service-detail" data-aos="fade-up" date-aos-delay="200">
+        <div class="container px-4">
+            <div class="row">
+                @foreach ($service as $item)
+                    <div class="p-3 mb-2 border border-purple-600 rounded-4 col-12 detail-service-section">
+                        <h5 class="text-center">{{ $item->title }}</h5>
+                        <p>{{ $item->description }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section><!-- End Service Section -->
 
     <!-- ======= Machine Section ======= -->
     <section class="service-details">

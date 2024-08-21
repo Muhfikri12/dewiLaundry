@@ -16,7 +16,7 @@
             <!-- Slide 2 -->
             <div class="carousel-item">
                 <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInDown">First Laundry Hotel in Karawang</h2>
+                    <h2 class="animate__animated animate__fadeInDown">First in Karawang</h2>
                     <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid.
                         Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
                         Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore
@@ -49,7 +49,7 @@
     </section><!-- End Hero -->
 
     <main id="main">
-        <section class="section-bg">
+        <section class="bg-opacity-25 section-bg">
             <div class="container mb-3 section-title">
                 <h2 class="text-center text-white">Services</h2>
             </div>
@@ -67,11 +67,10 @@
             </div>
         </section>
 
-
         <!-- ======= Why Us Section ======= -->
-        <section class="bg-white section-bg" data-aos="fade-up" date-aos-delay="200">
-            <div class="container">
-                <div class="section-title">
+        <section class=" why-us" data-aos="fade-up" date-aos-delay="200">
+            <div class="container pt-4">
+                <div class="section-title ">
                     <h2 class="mb-0">About Us</h2>
                 </div>
 

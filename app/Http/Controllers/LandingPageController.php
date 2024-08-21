@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Advantages;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
@@ -24,6 +25,7 @@ class LandingPageController extends Controller
             'gallery' => Galery::paginate(6),
             'teams' => Team::all(),
             'client' => Client::all(),
+            'contact' => Contact::first(),
 
         ]);
     }
@@ -36,6 +38,8 @@ class LandingPageController extends Controller
             'advantages' => Advantages::all(),
             'visiMission' => VisiMission::first(),
             'client' => Client::all(),
+            'contact' => Contact::first(),
+            'service' => Service::all(),
 
         ]);
     }
@@ -47,13 +51,18 @@ class LandingPageController extends Controller
             'machine' => Machines::paginate(6),
             'service' => Service::all(),
             'whyUs' => WhyUs::first(),
+            'contact' => Contact::first(),
+            'about' => About::first(),
         ]);
     }
 
     public function contact()
     {
         return view('landing_page.main', [
-            'main' => 'contact'
+            'main' => 'contact',
+            'contact' => Contact::first(),
+            'service' => Service::all(),
+            'about' => About::first(),
         ]);
     }
 }

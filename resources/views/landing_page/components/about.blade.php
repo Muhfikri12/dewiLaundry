@@ -22,70 +22,11 @@
         </div>
     </section><!-- End About Section -->
 
-    <section class=" skills" data-aos="fade-up">
-        <div class="container">
-            <div class="section-title">
-                <h2>Vision & Mission</h2>
-            </div>
-            <div class="row">
-                <div class="order-2 col-lg-6 order-lg-1">
-                    <div class="pb-0 section-title">
-                        <h4>Vision</h4>
-                    </div>
-                    <p>{!! $visiMission->vision !!}</p>
-
-                    <div class="pb-0 section-title">
-                        <h4>Mission</h4>
-                    </div>
-                    <p>{!! $visiMission->mission !!}</p>
-                </div>
-                <div class="order-1 pb-4 col-lg-6 order-lg-2">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </section><!-- End visi misi Section -->
-
-    <section class="skills" data-aos="fade-up">
-        <div class="service">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Advantages</h2>
-                </div>
-                <div class="row">
-                    <div class="accordion" id="accordionExample">
-
-                        @foreach ($advantages as $item => $key)
-                            <div class="card text">
-                                <div class="card-header" id="headingOne{{ $item }}">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                            data-target="#collapseOne{{ $item }}" aria-expanded="false"
-                                            aria-controls="collapseOne{{ $item }}">
-                                            {{ $key->title }}
-                                        </button>
-                                    </h5>
-                                </div>
-
-                                <div id="collapseOne{{ $item }}" class="collapse"
-                                    aria-labelledby="headingOne{{ $item }}" data-parent="#accordionExample">
-                                    <div class="card-body" style="text-align: left;">
-                                        {!! $key->description !!}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ======= Facts Section ======= -->
     <section class="facts section-bg" data-aos="fade-up">
         <div class="container">
 
-            <div class="row counters">
+            <div class="text-white row counters">
 
                 <div class="text-center col-lg-3 col-6">
                     <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
@@ -115,6 +56,30 @@
 
         </div>
     </section><!-- End Facts Section -->
+
+    <section class=" skills" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vision & Mission</h2>
+            </div>
+            <div class="row">
+                <div class="order-2 col-lg-6 order-lg-1">
+                    <div class="pb-0 section-title">
+                        <h4>Vision</h4>
+                    </div>
+                    <p>{!! $visiMission->vision !!}</p>
+
+                    <div class="pb-0 section-title">
+                        <h4>Mission</h4>
+                    </div>
+                    <p>{!! $visiMission->mission !!}</p>
+                </div>
+                <div class="order-1 pb-4 col-lg-6 order-lg-2">
+                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section><!-- End visi misi Section -->
 
     <!-- ======= Clients Section ======= -->
     <section class="clients" data-aos="fade-up">
@@ -165,6 +130,42 @@
 
         </div>
     </section><!-- End Clients Section -->
+
+    <section class="skills" data-aos="fade-up">
+        <div class="service">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Advantages</h2>
+                </div>
+                <div class="row">
+                    <div class="accordion" id="accordionExample">
+
+                        @foreach ($advantages as $item => $key)
+                            <div class="card text">
+                                <div class="card-header" id="headingOne{{ $item }}">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne{{ $item }}" aria-expanded="false"
+                                            aria-controls="collapseOne{{ $item }}">
+                                            {{ $key->title }}
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne{{ $item }}" class="collapse"
+                                    aria-labelledby="headingOne{{ $item }}" data-parent="#accordionExample">
+                                    <div class="card-body" style="text-align: left;">
+                                        {!! $key->description !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
