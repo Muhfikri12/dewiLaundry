@@ -19,6 +19,7 @@ class Contact extends Model
         'fb_link',
         'x_link',
         'linkedIn_link',
-        'phone'
+        'phone',
+        'address'
     ];
 }

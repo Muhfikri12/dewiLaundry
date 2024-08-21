@@ -112,6 +112,15 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <textarea type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror"
+                                        aria-describedby="address">{{ $contact->address }} </textarea>
+
+                                    @error('address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 <div class="row">
                                     <div class="mb-3 col-lg-6">
                                         <label for="instagram" class="form-label">Instagram</label>

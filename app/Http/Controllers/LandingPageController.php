@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Advantages;
+use App\Models\Client;
 use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
@@ -22,6 +23,7 @@ class LandingPageController extends Controller
             'service' => Service::all(),
             'gallery' => Galery::paginate(6),
             'teams' => Team::all(),
+            'client' => Client::all(),
 
         ]);
     }
@@ -33,6 +35,7 @@ class LandingPageController extends Controller
             'about' => About::first(),
             'advantages' => Advantages::all(),
             'visiMission' => VisiMission::first(),
+            'client' => Client::all(),
 
         ]);
     }

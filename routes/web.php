@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdvantagesController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\LandingPageController;
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/service', ServiceController::class);
     Route::resource('dashboard/galery', GaleryController::class);
     Route::resource('dashboard/team', TeamController::class);
+    Route::resource('dashboard/client', ClientController::class);
 });
 
 Route::get('/about', function () {

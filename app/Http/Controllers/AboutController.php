@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Client;
 use App\Models\Contact;
 use App\Models\VisiMission;
 use App\Models\WhyUs;
@@ -24,6 +25,7 @@ class AboutController extends Controller
             'contact' => Contact::first(),
             'visiMission' => VisiMission::first(),
             'whyUs' => WhyUs::first(),
+
 
 
         ]);
@@ -131,6 +133,7 @@ class AboutController extends Controller
                     'name' => $request->input('name'),
                     'email' => $request->input('email'),
                     'phone' => $request->input('phone'),
+                    'address' => $request->input('address'),
                     'ig_link' => $request->input('instagram'),
                     'fb_link' => $request->input('facebook'),
                     'wa_link' => $request->input('whatsapp'),
@@ -141,6 +144,7 @@ class AboutController extends Controller
                     'name' => $request->input('name'),
                     'email' => $request->input('email'),
                     'phone' => $request->input('phone'),
+                    'address' => $request->input('address'),
                     'ig_link' => $request->input('instagram'),
                     'fb_link' => $request->input('facebook'),
                     'wa_link' => $request->input('whatsapp'),
