@@ -9,6 +9,7 @@ use App\Models\Machines;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\VisiMission;
+use App\Models\WhyUs;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -42,6 +43,7 @@ class LandingPageController extends Controller
             'main' => 'service',
             'machine' => Machines::paginate(6),
             'service' => Service::all(),
+            'whyUs' => WhyUs::first(),
         ]);
     }
 

@@ -22,22 +22,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 video-box">
-                    <img src="assets/img/why-us.jpg" class="img-fluid" alt="">
+                    <img src="{{ Storage::url($whyUs->photo) }}" class="img-fluid" alt="">
                 </div>
 
                 <div class=" col-lg-6 d-flex flex-column justify-content-center">
 
                     <div class="icon-box">
                         <h4 class="title"><a href="">Why Us</a></h4>
-                        <p class="description">Dewi Laundry menawarkan lebih dari sekadar jasa mencuci dan
-                            menyetrika. Kami menyediakan solusi laundry yang komprehensif, dirancang untuk memenuhi
-                            kebutuhan unik setiap pelanggan.</p>
-                        <p class="description">Dengan layanan yang profesional dan didukung oleh peralatan modern, kami
-                            menjamin kualitas hasil laundry yang optimal.</p>
-                        <p class="description">Kami juga menawarkan fleksibilitas dalam pelayanan, mulai dari pilihan
-                            paket yang sesuai dengan kebutuhan Anda hingga layanan antar-jemput yang memudahkan. Pilih
-                            Dewi Laundry untuk kenyamanan, kepercayaan, dan hasil yang terbaik setiap kali
-                            Anda membutuhkan solusi laundry.</p>
+                        <p class="description">{!! $whyUs->description !!}</p>
+
                     </div>
                 </div>
             </div>
