@@ -129,8 +129,28 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Client $client)
+    public function destroy(string $id)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $client = Client::findOrFail($id);
+
+            if ($client->logo && Storage::disk('public')->exists($client->logo)) {
+                Storage::disk('public')->delete($client->logo);
+            }
+
+            $client->delete();
+
+            DB::commit();
+
+            Alert::success('Success', 'Client deleted successfully.');
+            return redirect()->route('client.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            Alert::error('Error', 'Failed to delete client. ' . $e->getMessage());
+            return redirect()->back();
+        }
     }
 }

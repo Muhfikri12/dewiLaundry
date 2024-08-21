@@ -25,7 +25,7 @@ class ClientRequest extends FormRequest
 
         return [
             'name' => 'required',
-            'photo' => $photoRule,
+            'logo' => $photoRule,
         ];
     }
 
@@ -34,10 +34,10 @@ class ClientRequest extends FormRequest
 
         return [
             'name.required' => 'Name field is required.',
-            'photo.required' => 'Photo field is required.',
-            'photo.image' => 'The uploaded file must be a valid image.',
-            'photo.mimes' => 'The uploaded file must be an image of type: jpeg, png, jpg, gif, or svg.',
-            'photo.max' => 'The image size must not exceed 8 MB.',
+            'logo.required' => 'Photo field is required.',
+            'logo.image' => 'The uploaded file must be a valid image.',
+            'logo.mimes' => 'The uploaded file must be an image of type: jpeg, png, jpg, gif, or svg.',
+            'logo.max' => 'The image size must not exceed 8 MB.',
         ];
     }
 }

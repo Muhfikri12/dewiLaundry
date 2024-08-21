@@ -14,8 +14,8 @@
         <!-- Form Start -->
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
-                <h6 class="mb-4">Gallery Form</h6>
-                <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
+                <h6 class="mb-4">Client Form</h6>
+                <form action="{{ url('/dashboard/client') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
