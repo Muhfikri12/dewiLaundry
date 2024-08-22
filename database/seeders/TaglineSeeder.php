@@ -25,8 +25,8 @@ class TaglineSeeder extends Seeder
                 'description' => 'Nikmati layanan laundry yang efisien dan mudah diakses di jantung kota. Kami melayani hotel Anda dengan standar kebersihan yang tinggi dan kecepatan yang tak tertandingi.',
             ],
             [
-                'title' => 'Profesional Launsdry',
-                'description' => 'BDapatkan layanan laundry profesional dengan standar kebersihan yang tinggi. Kami menggunakan teknologi canggih dan teknik terbaik untuk memastikan setiap item Anda bersih dan terawat dengan sempurna.',
+                'title' => 'Profesional Laundry',
+                'description' => 'Dapatkan layanan laundry profesional dengan standar kebersihan yang tinggi. Kami menggunakan teknologi canggih dan teknik terbaik untuk memastikan setiap item Anda bersih dan terawat dengan sempurna.',
             ],
         ];
 

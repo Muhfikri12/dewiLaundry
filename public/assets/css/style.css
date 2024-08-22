@@ -120,7 +120,7 @@ h6,
 
 .banner {
     width: 100%; /* Takes up half the width of the container */
-    height: 60vh; /* Takes up half the height of the viewport */
+    height: 80vh;
     margin: 0 auto; /* Centers the banner */
     overflow: hidden; /* Ensures the image doesn’t overflow */
     box-sizing: border-box; /* Includes padding and borders in the element's width and height */
@@ -128,7 +128,7 @@ h6,
 
 .banner img {
     width: 100%; /* Ensures the image fills the banner div */
-    height: 100%; /* Makes the image cover the entire height of the banner div */
+    height: 100%;
     object-fit: cover; /* Ensures the image covers the banner without stretching */
     display: block; /* Removes the gap under the image */
 }

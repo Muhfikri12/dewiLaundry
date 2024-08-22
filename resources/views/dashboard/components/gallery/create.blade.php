@@ -23,6 +23,9 @@
                         <input type="text" name="name" id="name"
                             class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
                             aria-describedby="name">
+                        <small>
+                            <p class="12px text-danger"><sup>*</sup> The Photo should have ratio 4:3</p>
+                        </small>
 
                         @error('name')
                             <span class="text-danger">{{ $message }}</span>

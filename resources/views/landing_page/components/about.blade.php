@@ -1,6 +1,6 @@
 <main id="main">
     <div class="banner">
-        <img src="{{ asset('assets/img/banner/banner1.jpg') }}" alt="banner">
+        <img src="{{ Storage::url($banners->banner) }}" alt="banner">
     </div>
     <!-- ======= About Section ======= -->
     <section class="about" data-aos="fade-up">
@@ -9,7 +9,7 @@
                 <h2>About Us</h2>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="mb-4 col-lg-6">
                     <img src="{{ Storage::url($about->photo) }}" class="img-fluid" alt="">
                 </div>
                 <div class=" col-lg-6 pt-lg-0">

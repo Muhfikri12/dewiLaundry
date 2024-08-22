@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdvantagesController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleryController;
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/team', TeamController::class);
     Route::resource('dashboard/client', ClientController::class);
     Route::resource('dashboard/tagline', TaglineController::class);
+    Route::resource('dashboard/banner', BannerController::class);
 });
 
 Route::get('/about', function () {

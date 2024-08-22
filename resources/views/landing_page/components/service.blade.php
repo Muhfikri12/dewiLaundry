@@ -1,7 +1,5 @@
 <main id="main">
-
-
-    <section class="section-bg">
+    {{-- <section class="section-bg">
         <div class="container mb-3 section-title">
             <h2 class="text-center text-white">Our Services</h2>
         </div>
@@ -17,7 +15,10 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
+    <div class="banner">
+        <img src="{{ Storage::url($banners->banner) }}" alt="banner">
+    </div>
     <section class="why-us " data-aos="fade-up" date-aos-delay="200">
         <div class="container">
             <div class="row">

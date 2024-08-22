@@ -33,6 +33,9 @@
                         <label for="photo" class="form-label">Photo</label>
                         <input class="form-control @error('photo') is-invalid @enderror" type="file" id="photo"
                             name="photo" aria-describedby="photo">
+                        <small>
+                            <p class="12px text-danger"><sup>*</sup> The Photo should have ratio 4:3</p>
+                        </small>
 
                         @error('photo')
                             <span class="text-danger">{{ $message }}</span>

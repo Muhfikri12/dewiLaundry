@@ -5,37 +5,22 @@
             <!-- Slide 1 -->
             <div class="carousel-item active">
                 <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Dewi Laundry</span></h2>
-                    <p class="animate__animated animate__fadeInUp">Layanan Laundry Hotel Pertama dan Satu-satunya di
-                        Karawang. Kami Menetapkan Standar Keunggulan, Memastikan Tamu Anda Merasakan Kemewahan Linen
-                        yang Selalu Bersih Sempurna, Setiap Saat.</p>
-                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                    <h2 class="animate__animated animate__fadeInDown">{!! $tagline->title !!}</h2>
+                    <p class="animate__animated animate__fadeInUp">{{ $tagline->description }}</p>
+                    <a href="#home" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item">
-                <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInDown">First in Karawang</h2>
-                    <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid.
-                        Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
-                        Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore
-                        modi architecto.</p>
-                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+            @foreach ($tag as $item)
+                <div class="carousel-item">
+                    <div class="carousel-container">
+                        <h2 class="animate__animated animate__fadeInDown">{{ $item->title }}</h2>
+                        <p class="animate__animated animate__fadeInUp">{{ $item->description }}</p>
+                        <a href="#home" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                    <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid.
-                        Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.
-                        Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore
-                        modi architecto.</p>
-                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-                </div>
-            </div>
+            @endforeach
 
             <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
@@ -49,7 +34,7 @@
     </section><!-- End Hero -->
 
     <main id="main">
-        <section class="bg-opacity-25 section-bg">
+        <section class="bg-opacity-25 section-bg" id="home">
             <div class="container mb-3 section-title">
                 <h2 class="text-center text-white">Services</h2>
             </div>
@@ -86,7 +71,8 @@
                             </small>
                         </div>
                         <div>
-                            <div class="read-more"><a href="{{ route('about') }}"><i class="bi bi-arrow-right"></i> Read
+                            <div class="mb-4 read-more"><a href="{{ route('about') }}"><i class="bi bi-arrow-right"></i>
+                                    Read
                                     More</a>
                             </div>
 

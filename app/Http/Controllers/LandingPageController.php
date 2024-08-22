@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Advantages;
+use App\Models\Banner;
 use App\Models\Client;
 use App\Models\Contact;
 use App\Models\Galery;
 use App\Models\Machines;
 use App\Models\Service;
+use App\Models\Tagline;
 use App\Models\Team;
 use App\Models\VisiMission;
 use App\Models\WhyUs;
@@ -26,6 +28,8 @@ class LandingPageController extends Controller
             'teams' => Team::all(),
             'client' => Client::all(),
             'contact' => Contact::first(),
+            'tagline' => Tagline::first(),
+            'tag' => Tagline::skip(1)->take(100)->get(),
 
         ]);
     }
@@ -40,6 +44,7 @@ class LandingPageController extends Controller
             'client' => Client::all(),
             'contact' => Contact::first(),
             'service' => Service::all(),
+            'banners' => Banner::first()
 
         ]);
     }
@@ -53,6 +58,7 @@ class LandingPageController extends Controller
             'whyUs' => WhyUs::first(),
             'contact' => Contact::first(),
             'about' => About::first(),
+            'banners' => Banner::find(2)
         ]);
     }
 
@@ -63,6 +69,7 @@ class LandingPageController extends Controller
             'contact' => Contact::first(),
             'service' => Service::all(),
             'about' => About::first(),
+            'banners' => Banner::find(3)
         ]);
     }
 }

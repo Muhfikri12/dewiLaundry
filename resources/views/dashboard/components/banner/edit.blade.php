@@ -14,21 +14,18 @@
         <!-- Form Start -->
         <div class="px-4 pt-4 container-fluid">
             <div class="p-4 rounded bg-light h-100">
-                <h6 class="mb-4">Gallery Form</h6>
+                <h6 class="mb-4">Banner Form</h6>
                 <div class="row gallery-form">
                     <div class="col-lg-9 col-md-9">
-                        <form action="{{ route('galery.update', $gallery->id) }}" method="POST"
+                        <form action="{{ route('banner.update', $banner->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('Put')
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" id="name"
-                                    class="form-control @error('name') is-invalid @enderror"
-                                    value="{{ $gallery->name }}" aria-describedby="name">
-                                <small>
-                                    <p class="12px text-danger"><sup>*</sup> The Photo should have ratio 4:3</p>
-                                </small>
+                                <input readonly type="text" name="name" id="name"
+                                    class="form-control @error('name') is-invalid @enderror" value="{{ $banner->name }}"
+                                    aria-describedby="name">
 
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
@@ -36,9 +33,16 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="photo" class="form-label">Photo</label>
-                                <input class="form-control @error('photo') is-invalid @enderror" type="file"
-                                    id="photo" name="photo" aria-describedby="photo">
+                                <label for="banner" class="form-label">Banner</label>
+                                <input class="form-control @error('banner') is-invalid @enderror" type="file"
+                                    id="banner" name="banner" aria-describedby="banner">
+                                <small>
+                                    <p class="12px text-danger"><sup class="text-danger">*</sup> The Banner should have
+                                        size 240px
+                                        x
+                                        60px
+                                    </p>
+                                </small>
 
                                 @error('photo')
                                     <span class="text-danger">{{ $message }}</span>
@@ -50,7 +54,7 @@
 
                     <div class="col-lg-3 col-md-3 gallery-preview">
                         <label for="photo" class="form-label">Photo Preview</label>
-                        <img class="rounded w-100" src="{{ Storage::url($gallery->photo) }}" alt="{{ $gallery->name }}">
+                        <img class="rounded w-100" src="{{ Storage::url($banner->banner) }}" alt="{{ $banner->name }}">
                     </div>
                 </div>
             </div>
