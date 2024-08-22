@@ -23,7 +23,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Facts Section ======= -->
-    <section class="facts section-bg" data-aos="fade-up">
+    <section class="facts section-bg-about" data-aos="fade-up">
         <div class="container">
 
             <div class="text-white row counters">

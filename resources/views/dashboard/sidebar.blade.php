@@ -28,6 +28,9 @@
             <a href="{{ route('service.index') }}"
                 class="nav-item nav-link {{ request()->is('dashboard/service') ? 'active' : '' }}"><i
                     class="fa fa-cogs me-2"></i>Service</a>
+            <a href="{{ route('tagline.index') }}"
+                class="nav-item nav-link {{ request()->is('dashboard/tagline') ? 'active' : '' }}"><i
+                    class="fa fa-feather me-2"></i>Tagline</a>
             <div class="nav-item dropdown">
                 <a href="#"
                     class="nav-item nav-link {{ request()->is('dashboard/about', 'dashboard/galery', 'dashboard/team', 'dashboard/client') ? 'active' : '' }} dropdown-toggle"

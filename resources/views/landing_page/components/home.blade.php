@@ -77,8 +77,6 @@
                 <div class="row">
                     <div class="col-lg-6 video-box">
                         <img src="{{ Storage::url($about->photo) }}" class="img-fluid" alt="">
-                        <a href="https://youtu.be/SDROba_M42g?si=bguzuhObDMOEJRcY" class="mb-4 venobox play-btn"
-                            data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
                         <div class="icon-box">

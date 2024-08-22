@@ -9,6 +9,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MachineController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TaglineController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/galery', GaleryController::class);
     Route::resource('dashboard/team', TeamController::class);
     Route::resource('dashboard/client', ClientController::class);
+    Route::resource('dashboard/tagline', TaglineController::class);
 });
 
 Route::get('/about', function () {

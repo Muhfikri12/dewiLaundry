@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
             VisiMissionSeeder::class,
             TeamSeeder::class,
             WhyUsSeeder::class,
-            ClientSeeder::class
+            ClientSeeder::class,
+            TaglineSeeder::class
         ]);
     }
 }
