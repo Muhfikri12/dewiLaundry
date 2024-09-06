@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\Message;
 use App\Models\VisiMission;
 use App\Models\WhyUs;
 use Illuminate\Http\Request;
@@ -25,9 +26,7 @@ class AboutController extends Controller
             'contact' => Contact::first(),
             'visiMission' => VisiMission::first(),
             'whyUs' => WhyUs::first(),
-
-
-
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

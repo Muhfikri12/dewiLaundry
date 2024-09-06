@@ -22,14 +22,14 @@
                                 <p>{{ $contact->address }}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6" style="width: 50%">
                             <div class="info-box">
                                 <i class="bx bx-envelope"></i>
                                 <h3>Email Us</h3>
                                 <p>{{ $contact->email }}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6" style="width: 50%">
                             <div class="info-box">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Call Us</h3>
@@ -41,30 +41,47 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form action="{{ route('message') }}" method="post" class="php-email-form-a">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name"
-                                    placeholder="Your Name" required>
+                                <input type="text" name="name"
+                                    class="form-control @error('name') is-invalid @enderror" id="name"
+                                    value="{{ old('name') }}" placeholder="Your Name">
+                                @error('name')
+                                    <small><span class="text-danger">{{ $message }}</span></small>
+                                @enderror
                             </div>
                             <div class="mt-3 col-md-6 form-group mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" required>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" id="email" value="{{ old('email') }}" placeholder="Your Email">
+                                @error('email')
+                                    <small><span class="text-danger">{{ $message }}</span></small>
+                                @enderror
                             </div>
                         </div>
                         <div class="mt-3 form-group">
-                            <input type="text" class="form-control" name="subject" id="subject"
-                                placeholder="Subject" required>
+                            <input type="text" class="form-control @error('subject') is-invalid @enderror"
+                                name="subject" id="subject" placeholder="Subject" value="{{ old('subject') }}">
+
+                            @error('subject')
+                                <small><span class="text-danger">{{ $message }}</span></small>
+                            @enderror
                         </div>
                         <div class="mt-3 form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                            <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="5"
+                                placeholder="Message">{{ old('message') }}</textarea>
+                            @error('message')
+                                <small><span class="text-danger">{{ $message }}</span></small>
+                            @enderror
                         </div>
                         <div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <button class="mt-3 justify-content-center " type="submit" class="btn btn-primary">Send
+                            Message</button>
                     </form>
                 </div>
 

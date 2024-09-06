@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ServiceRequest;
+use App\Models\Message;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,7 @@ class ServiceController extends Controller
         return view('dashboard.index', [
             'main' => 'services.index',
             'service' => Service::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -29,6 +31,7 @@ class ServiceController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'services.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -80,6 +83,7 @@ class ServiceController extends Controller
         return view('dashboard.index', [
             'main' => 'services.edit',
             'service' => Service::find($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

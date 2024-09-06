@@ -13,10 +13,7 @@
                 <div class="col-12">
                     <div class="px-4 py-2 rounded bg-light h-100">
                         <div class="m-2 header-table d-flex justify-content-between align-items-center">
-                            <h5 class="">Machines Table</h5>
-                            <a class="m-2 btn btn-sm btn-primary" type="button" href="{{ route('machine.create') }}"><i
-                                    class="fa fa-plus me-2"></i>Add
-                                Machines </a>
+                            <h5 class="">Message Table</h5>
                         </div>
                         <div class="table-responsive">
                             <table id="data-table" class="table">
@@ -24,21 +21,16 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Picture</th>
-                                        <th scope="col">Description</th>
+                                        <th scope="col">Message</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($machine as $item)
+                                    @foreach ($messageDetail as $item)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $item->name }}</td>
-                                            <td><img style="width: 5rem; height:auto"
-                                                    src="{{ Storage::url($item->photo) ?? asset($$item->photo) }}"
-                                                    alt="{{ $item->name }}">
-                                            </td>
-                                            <td>{!! $item->description !!}</td>
+                                            <td>{!! $item->message !!}</td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="p-0 btn hide-arrow"
@@ -47,17 +39,8 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('machine.edit', $item->id) }}"><i
-                                                                class="fa fa-edit me-1"></i>Ubah</a>
-                                                        <form action="{{ route('machine.destroy', $item->id) }}"
-                                                            method="POST" id="delete-form-{{ $item->id }}">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <a class="dropdown-item" href="javascript:void(0);"
-                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();">
-                                                                <i class="fa fa-trash me-1"></i> Hapus
-                                                            </a>
-                                                        </form>
+                                                            href="{{ route('advantages.edit', $item->id) }}"><i
+                                                                class="fa fa-eye me-1"></i>Lihat</a>
                                                     </div>
                                                 </div>
                                             </td>

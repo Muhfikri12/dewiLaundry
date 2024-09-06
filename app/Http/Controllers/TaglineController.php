@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TaglineRequest;
+use App\Models\Message;
 use App\Models\Tagline;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,8 @@ class TaglineController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'taglines.index',
-            'tagline' => Tagline::all()
+            'tagline' => Tagline::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -27,7 +29,8 @@ class TaglineController extends Controller
     public function create()
     {
         return view('dashboard.index', [
-            'main' => 'taglines.create'
+            'main' => 'taglines.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -71,7 +74,8 @@ class TaglineController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'taglines.edit',
-            'tagline' => Tagline::find($id)
+            'tagline' => Tagline::find($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

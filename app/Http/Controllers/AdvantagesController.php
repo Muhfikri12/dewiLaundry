@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdvantagesRequest;
 use App\Models\Advantages;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -17,7 +18,8 @@ class AdvantagesController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'advantages.index',
-            'advantages' => Advantages::all()
+            'advantages' => Advantages::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -27,7 +29,8 @@ class AdvantagesController extends Controller
     public function create()
     {
         return view('dashboard.index', [
-            'main' => 'advantages.create'
+            'main' => 'advantages.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -71,7 +74,8 @@ class AdvantagesController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'advantages.edit',
-            'advantages' => Advantages::findOrFail($id)
+            'advantages' => Advantages::findOrFail($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

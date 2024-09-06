@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MachineRequest;
 use App\Models\Machines;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,8 @@ class MachineController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'machines.index',
-            'machine' => Machines::all()
+            'machine' => Machines::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -29,6 +31,7 @@ class MachineController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'machines.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -77,6 +80,8 @@ class MachineController extends Controller
         return view('dashboard.index', [
             'main' => 'machines.edit',
             'machine' => Machines::find($id),
+            'message' => Message::latest()->take(4)->get()
+
         ]);
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GalleryRequest;
 use App\Models\Galery;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,8 @@ class GaleryController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'gallery.index',
-            'gallery' => Galery::all()
+            'gallery' => Galery::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -28,7 +30,8 @@ class GaleryController extends Controller
     public function create()
     {
         return view('dashboard.index', [
-            'main' => 'gallery.create'
+            'main' => 'gallery.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -79,7 +82,8 @@ class GaleryController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'gallery.edit',
-            'gallery' => Galery::find($id)
+            'gallery' => Galery::find($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

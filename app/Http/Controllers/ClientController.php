@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,7 @@ class ClientController extends Controller
         return view('dashboard.index', [
             'main' => 'client.index',
             'client' => Client::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -29,6 +31,7 @@ class ClientController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'client.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -80,6 +83,7 @@ class ClientController extends Controller
         return view('dashboard.index', [
             'main' => 'client.edit',
             'client' => Client::find($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,8 @@ class BannerController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'banner.index',
-            'banner' => Banner::all()
+            'banner' => Banner::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -49,7 +51,9 @@ class BannerController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'banner.edit',
-            'banner' => Banner::find($id)
+            'banner' => Banner::find($id),
+            'message' => Message::latest()->take(4)->get()
+
         ]);
     }
 

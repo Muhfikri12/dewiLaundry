@@ -4,8 +4,10 @@
             <h5 class="text-primary"><i class="fa fa-hashtag me-2"></i>Dewi Laundry</h5>
         </a>
         <div class="mb-4 d-flex align-items-center ms-4">
-            <div class="position-relative">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+            <div class="position-relative d-flex align-items-center">
+                <div class="icon">
+                    <i class="fas fa-user-circle" style="font-size: 2.3rem"></i>
+                </div>
                 <div
                     class="bottom-0 p-1 border border-white border-x-2 bg-success rounded-circle position-absolute end-0">
                 </div>

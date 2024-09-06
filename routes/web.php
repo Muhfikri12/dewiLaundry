@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MachineController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TaglineController;
@@ -18,6 +19,7 @@ Route::get('/', [LandingPageController::class, 'home'])->name('home');
 Route::get('/aboutUs', [LandingPageController::class, 'about'])->name('about');
 Route::get('/services', [LandingPageController::class, 'service'])->name('service');
 Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
+Route::post('/message', [MessageController::class, 'store'])->name('message');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -38,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/client', ClientController::class);
     Route::resource('dashboard/tagline', TaglineController::class);
     Route::resource('dashboard/banner', BannerController::class);
+    Route::resource('dashboard/message', MessageController::class);
 });
 
 Route::get('/about', function () {

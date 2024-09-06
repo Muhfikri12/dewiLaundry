@@ -56,14 +56,14 @@
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
                                                             href="{{ route('team.edit', $item->id) }}"><i
-                                                                class="bx bx-edit-alt me-1"></i>Ubah</a>
+                                                                class="fa fa-edit me-1"></i>Ubah</a>
                                                         <form action="{{ route('team.destroy', $item->id) }}"
                                                             method="POST" id="delete-form-{{ $item->id }}">
                                                             @csrf
                                                             @method('DELETE')
                                                             <a class="dropdown-item" href="javascript:void(0);"
                                                                 onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();">
-                                                                <i class="bx bx-trash me-1"></i> Hapus
+                                                                <i class="fa fa-trash me-1"></i> Hapus
                                                             </a>
                                                         </form>
                                                     </div>

@@ -34,7 +34,8 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             WhyUsSeeder::class,
             ClientSeeder::class,
-            TaglineSeeder::class
+            TaglineSeeder::class,
+            BannerSeeder::class
         ]);
     }
 }

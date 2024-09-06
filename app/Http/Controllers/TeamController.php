@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TeamRequest;
+use App\Models\Message;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,7 @@ class TeamController extends Controller
         return view('dashboard.index', [
             'main' => 'team.index',
             'teams' => Team::all(),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -28,7 +30,8 @@ class TeamController extends Controller
     public function create()
     {
         return view('dashboard.index', [
-            'main' => 'team.create'
+            'main' => 'team.create',
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 
@@ -83,7 +86,8 @@ class TeamController extends Controller
     {
         return view('dashboard.index', [
             'main' => 'team.edit',
-            'team' => Team::find($id)
+            'team' => Team::find($id),
+            'message' => Message::latest()->take(4)->get()
         ]);
     }
 

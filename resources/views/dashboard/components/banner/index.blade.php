@@ -42,16 +42,7 @@
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
                                                             href="{{ route('banner.edit', $item->id) }}"><i
-                                                                class="bx bx-edit-alt me-1"></i>Ubah</a>
-                                                        {{-- <form action="{{ route('.destroy', $item->id) }}"
-                                                            method="POST" id="delete-form-{{ $item->id }}">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <a class="dropdown-item" href="javascript:void(0);"
-                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $item->id }}').submit();">
-                                                                <i class="bx bx-trash me-1"></i> Hapus
-                                                            </a>
-                                                        </form> --}}
+                                                                class="fa fa-edit me-1"></i>Ubah</a>
                                                     </div>
                                                 </div>
                                             </td>
