@@ -39,7 +39,7 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item"
-                                                            href="{{ route('advantages.edit', $item->id) }}"><i
+                                                            href="{{ route('message.show', $item->id) }}"><i
                                                                 class="fa fa-eye me-1"></i>Lihat</a>
                                                     </div>
                                                 </div>

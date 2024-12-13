@@ -57,9 +57,15 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Message $message)
+    public function show(String $id)
     {
-        //
+
+
+        return view('dashboard.index', [
+            'main' => 'message.create',
+            'messages' => Message::find($id),
+            'message' => Message::latest()->take(4)->get(),
+        ]);
     }
 
     /**

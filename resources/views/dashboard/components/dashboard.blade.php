@@ -5,7 +5,7 @@
 
 
     <!-- Sale & Revenue Start -->
-    <div class="px-4 pt-4 container-fluid">
+    {{-- <div class="px-4 pt-4 container-fluid">
         <div class="row g-4">
             <div class="col-sm-6 col-xl-3">
                 <div class="p-4 rounded bg-light d-flex align-items-center justify-content-between">
@@ -44,12 +44,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Sale & Revenue End -->
 
 
     <!-- Sales Chart Start -->
-    <div class="px-4 pt-4 container-fluid">
+    {{-- <div class="px-4 pt-4 container-fluid">
         <div class="row g-4">
             <div class="col-sm-12 col-xl-6">
                 <div class="p-4 text-center rounded bg-light">
@@ -70,12 +70,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Sales Chart End -->
 
 
     <!-- Recent Sales Start -->
-    <div class="px-4 pt-4 container-fluid">
+    {{-- <div class="px-4 pt-4 container-fluid">
         <div class="p-4 text-center rounded bg-light">
             <div class="mb-4 d-flex align-items-center justify-content-between">
                 <h6 class="mb-0">Recent Salse</h6>
@@ -144,12 +144,12 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Recent Sales End -->
 
 
     <!-- Widgets Start -->
-    <div class="px-4 pt-4 container-fluid">
+    {{-- <div class="px-4 pt-4 container-fluid">
         <div class="row g-4">
             <div class="col-sm-12 col-md-6 col-xl-4">
                 <div class="p-4 rounded h-100 bg-light">
@@ -270,7 +270,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Widgets End -->
 
     @include('dashboard.footer')

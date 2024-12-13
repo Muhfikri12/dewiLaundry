@@ -20,8 +20,7 @@ class LandingPageController extends Controller
 {
     public function home()
     {
-        return view('landing_page.main', [
-            'main' => 'home',
+        return view('landing_page.components.home', [
             'about' => About::first(),
             'service' => Service::all(),
             'gallery' => Galery::paginate(6),
@@ -36,8 +35,7 @@ class LandingPageController extends Controller
 
     public function about()
     {
-        return view('landing_page.main', [
-            'main' => 'about',
+        return view('landing_page.components.about', [
             'about' => About::first(),
             'advantages' => Advantages::all(),
             'visiMission' => VisiMission::first(),
@@ -51,8 +49,7 @@ class LandingPageController extends Controller
 
     public function service()
     {
-        return view('landing_page.main', [
-            'main' => 'service',
+        return view('landing_page.components.service', [
             'machine' => Machines::paginate(6),
             'service' => Service::all(),
             'whyUs' => WhyUs::first(),
@@ -64,7 +61,7 @@ class LandingPageController extends Controller
 
     public function contact()
     {
-        return view('landing_page.main', [
+        return view('landing_page.components.contact', [
             'main' => 'contact',
             'contact' => Contact::first(),
             'service' => Service::all(),

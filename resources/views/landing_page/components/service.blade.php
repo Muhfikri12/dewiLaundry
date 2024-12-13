@@ -1,5 +1,9 @@
-<main id="main">
-    {{-- <section class="section-bg">
+@extends('layouts.index')
+
+@section('title', 'Service Dewi Laundry')
+@section('main')
+    <main id="main">
+        {{-- <section class="section-bg">
         <div class="container mb-3 section-title">
             <h2 class="text-center text-white">Our Services</h2>
         </div>
@@ -16,67 +20,71 @@
             </div>
         </div>
     </section> --}}
-    <div class="banner">
-        <img src="{{ Storage::url($banners->banner) }}" alt="banner">
-    </div>
-    <section class="why-us " data-aos="fade-up" date-aos-delay="200">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 video-box">
-                    <img src="{{ Storage::url($whyUs->photo) }}" class="img-fluid" alt="">
-                </div>
-
-                <div class=" col-lg-6 d-flex flex-column justify-content-center">
-
-                    <div class="icon-box">
-                        <h4 class="title"><a href="">Why Us</a></h4>
-                        <p class="description">{!! $whyUs->description !!}</p>
-
-                    </div>
-                </div>
-            </div>
+        <div class="banner">
+            <img src="{{ Storage::url($banners->banner) }}" alt="banner">
         </div>
-    </section><!-- End Why Us Section -->
-
-    <section class="service-detail" data-aos="fade-up" date-aos-delay="200">
-        <div class="container px-4">
-            <div class="row">
-                @foreach ($service as $item)
-                    <div class="p-3 mb-2 border border-purple-600 rounded-4 col-12 detail-service-section">
-                        <h5 class="text-center">{{ $item->title }}</h5>
-                        <p>{{ $item->description }}</p>
+        <section class="why-us " data-aos="fade-up" date-aos-delay="200">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 video-box">
+                        <img src="{{ Storage::url($whyUs->photo) }}" class="img-fluid" alt="">
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </section><!-- End Service Section -->
 
-    <!-- ======= Machine Section ======= -->
-    <section class="service-details">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Machines</h2>
-            </div>
-            <div class="row">
-                @foreach ($machine as $item)
-                    <div class="machine col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="{{ Storage::url($item->photo) }}" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="#">{{ $item->name }}</a></h5>
-                                <p class="card-text">{{ $item->description }}</p>
-                            </div>
+                    <div class=" col-lg-6 d-flex flex-column justify-content-center">
+
+                        <div class="icon-box">
+                            <h4 class="title"><a href="">Why Us</a></h4>
+                            <p class="description">{!! $whyUs->description !!}</p>
+
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
-            <div class="d-flex justify-content-center" data-aos="fade-up">
-                {{ $machine->links('components.pagination') }}
+        </section><!-- End Why Us Section -->
+
+        <section class="service-detail" data-aos="fade-up" date-aos-delay="200">
+            <div class="container px-4">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                </div>
+                <div class="row">
+                    @foreach ($service as $item)
+                        <div class="p-3 mb-2 border border-purple-600 rounded-4 col-12 detail-service-section">
+                            <h5 class="text-center">{{ $item->title }}</h5>
+                            <p>{{ $item->description }}</p>
+                        </div>
+                    @endforeach
+                </div>
             </div>
+        </section><!-- End Service Section -->
 
-        </div>
-    </section><!-- End Machine Section -->
+        <!-- ======= Machine Section ======= -->
+        <section class="service-details">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Machines</h2>
+                </div>
+                <div class="row">
+                    @foreach ($machine as $item)
+                        <div class="machine col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="{{ Storage::url($item->photo) }}" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">{{ $item->name }}</a></h5>
+                                    <p class="card-text">{{ $item->description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="d-flex justify-content-center" data-aos="fade-up">
+                    {{ $machine->links('components.pagination') }}
+                </div>
 
-</main><!-- End #main -->
+            </div>
+        </section><!-- End Machine Section -->
+
+    </main><!-- End #main -->
+@endsection

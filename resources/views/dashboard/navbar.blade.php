@@ -79,7 +79,7 @@
                 <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
             </a> --}}
             <div class="m-0 border-0 dropdown-menu dropdown-menu-end bg-light rounded-0 rounded-bottom">
-                <a href="#" class="dropdown-item">My Profile</a>
+                <a href="{{ route('profile.edit') }}" class="dropdown-item">My Profile</a>
                 <a href="#" class="dropdown-item">Settings</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
